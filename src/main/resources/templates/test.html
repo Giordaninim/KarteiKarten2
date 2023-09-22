@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <title>TESTTTTTTTT</title>
+</head>
+<body>
+<div th:insert="~{fragments/template :: navbar}"></div>
+
+<div class="card text-center">
+    <div class="card-header">
+        <ul class="nav nav-pills card-header-pills">
+            <li class="nav-item">
+                <a>Typ eine frage ein</a>
+            </li>
+        </ul>
+    </div>
+    <div class="card-body">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default" style="width: 100px">Frage</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group">
+            <span class="input-group-text" id="inputGroup-sizing-default1" style="width: 100px">Antwort</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <a href="#" class="btn btn-primary">Save & Next</a>
+    </div>
+</div>
+
+<div align="center">
+    <h1>Spring Boot Form Demo</h1>
+    <a href="/register">Click here to register</a>
+</div>
+
+
+
+<div th:insert="~{fragments/template :: footer}"></div>
+</body>
+</html>

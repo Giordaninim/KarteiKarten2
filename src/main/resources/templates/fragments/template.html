@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <title>Template</title>
+</head>
+<body>
+
+<section th:fragment="navbar">
+    <nav class="navbar navbar-light bg-light shadow">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="https://uploads-ssl.webflow.com/5e8de059d35d92d837a57961/5fd23dc18d7d24876d2919d8_LOGO_L_POS_RGB.svg" width="180">
+            </a>
+        </div>
+    </nav>
+</section>
+
+<section th:fragment="footer">
+<footer class="fixed-bottom" id="footer">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item"><a href="https://www.mischok.academy/impressum" target="_blank" class="nav-link px-2 text-muted">Impressum</a>
+        </li>
+        <li class="nav-item"><span class="px-1 nav-link text-muted">•</span></li>
+        <li class="nav-item"><a href="https://www.mischok.academy/datenschutz" target="_blank" class="nav-link px-2 text-muted">AGB</a>
+        <li class="nav-item"><span class="px-1 nav-link text-muted">•</span></li>
+        <li class="nav-item"><span class="nav-link text-muted px-2">© 2023 Mischok GmbH</span>
+        </li>
+    </ul>
+</footer>
+</section>
+
+<section th:fragment="card">
+    <div class="box-item col-md-4">
+        <div class="flip-box">
+            <div class="flip-box-front text-center" style="background-image: url(/img/Karteikarten.jpg);">
+                <div class="inner color-white">
+                    <h3 class="flip-box-header">Karteikarten</h3>
+                    <p>A short sentence describing this callout is.</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" class="bi bi-card-checklist" viewBox="0 0 16 16">
+                        <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                        <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="flip-box-back text-center" style="background-image: url(/img/Karteikarten.jpg);">
+                <div class="inner color-white">
+                    <h3 class="flip-box-header">Karteikarten Modus </h3>
+                    <p>Ein projekt von Antonio La Maida.</p>
+                    <button onclick="location.href = 'karteikarten';" type="button" class="btn btn-primary"
+                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size:20px .75rem;">Create</button>
+                    <button onclick="location.href = 'karteikarten';" type="button" class="btn btn-primary"
+                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size:20px .75rem;">Change</button>
+                    <button onclick="location.href = 'karteikarten';" type="button" class="btn btn-primary"
+                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size:20px .75rem;">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
