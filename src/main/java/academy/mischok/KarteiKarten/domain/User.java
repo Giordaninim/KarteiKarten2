@@ -1,7 +1,8 @@
-package academy.mischok.KarteiKarten;
+package academy.mischok.KarteiKarten.domain;
 import  java.sql.Date;
 
 public class User {
+	private Integer id;
 	private String name;
 	private String email;
 	private String password;

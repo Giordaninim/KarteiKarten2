@@ -1,6 +1,7 @@
-package academy.mischok.KarteiKarten;
+package academy.mischok.KarteiKarten.domain;
 
 public class Question {
+	private Integer id;
 	private String frage;
 	private String antwort;
 	public String getFrage() {
@@ -15,8 +16,8 @@ public class Question {
 	public void setAntwort(String antwort) {
 		this.antwort = antwort;
 	}
-	//@Override
-	/*public String toString() {
+	/*@Override
+	public String toString() {
 		return "Question{" +
 				"frage='" + frage + '\'' +
 				", antwort='" + antwort + '\'' +
