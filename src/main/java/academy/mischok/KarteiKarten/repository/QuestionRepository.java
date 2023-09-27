@@ -1,13 +1,29 @@
 package academy.mischok.KarteiKarten.repository;
 
 import academy.mischok.KarteiKarten.domain.Question;
+import academy.mischok.KarteiKarten.rowmapper.QuestionRowMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
 
+import java.util.List;
 
+@Component
 public class QuestionRepository implements CrudRepository<Question, Integer> {
+	
+	@Autowired
+	private JdbcTemplate jdbcTemplate;
+	@Autowired
+	private QuestionRowMapper rowMapper;
+	
 	@Override
-	public Iterable<Question> findAll() {
+	public List<Question> findAll() {
 		String sql = "SELECT * FROM frage";
-		return null;
+		
+		List<Question> questions = jdbcTemplate.query(sql, new QuestionRowMapper());
+		
+		return questions;
 	}
 	
 	@Override
@@ -20,18 +36,21 @@ public class QuestionRepository implements CrudRepository<Question, Integer> {
 		return null;
 	}
 	
-	
 	@Override
 	public void delete(Question entity) {
+	
 	}
 	
 	@Override
 	public void update(Question entity) {
 	
 	}
-	
-	public Question findByFrage(String frage){
-		String sql = "SELECT * from frage where frage = ?";
+	/*@Override
+	public Iterable<Question> findAll() {
+		String sql = "SELECT * FROM frage";
 		return null;
+	}*/
+	
+	
+	
 	}
-}

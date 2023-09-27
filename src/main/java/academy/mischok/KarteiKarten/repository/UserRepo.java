@@ -2,9 +2,11 @@ package academy.mischok.KarteiKarten.repository;
 
 import academy.mischok.KarteiKarten.domain.User;
 
+import java.util.List;
+
 public class UserRepo implements CrudRepository<User, Integer>{
 	@Override
-	public Iterable<User> findAll() {
+	public List<User> findAll() {
 		return null;
 	}
 	

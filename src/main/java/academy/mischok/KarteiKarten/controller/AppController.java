@@ -1,8 +1,11 @@
 package academy.mischok.KarteiKarten.controller;
+import academy.mischok.KarteiKarten.domain.Question;
+import academy.mischok.KarteiKarten.repository.QuestionRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
 @Controller
 public class AppController {
     @GetMapping("/")
@@ -25,9 +28,13 @@ public class AppController {
     public String getResult() {
         return "result";
     }
+    
+    
+   /*
     @PostMapping("/")
     public String save(@RequestParam String question) {
         // TODO: Frage in Database speichern
         return "index";
     }
+    */
 }
