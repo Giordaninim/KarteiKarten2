@@ -24,19 +24,21 @@
             padding: 5px;
             margin: 10px;
         }
-        #input_question{color:red;}
+        #frage{color:red;}
         #input_answer{color:green;}
     </style>
 </head>
 <body>
-<div align="center">
+<div align="center">          <!--th:field setzt id, name und value-Attribut mit den eingegebenen wert-->
     <h1 >Question registration</h1>
     <form action="#" th:action="@{/question_form}" method="post" th:object="${question}">
         <!--          th:action= URL an, an den das Formular die Daten senden wird
                                                        ${question} is the object of class Question-->
         <label>Question:</label>
-        <input id="input_question" type="text" required placeholder="Enter Question" th:field="*{frage}"/><br/>
-                 <!-- id="xxx" is only css-style, not DB-table-->
+        <input style="color:red" type="text" required placeholder="Enter Question" th:field="${question.frage}"/><br/>
+<!--        <input type="text" required placeholder="Enter Question" th:id="*{frage}" th:name="${question.frage}" th:value="${question.frage}"/><br/>-->
+
+        <!-- id="xxx" is only css-style, not DB-table-->
                 <!-- placeholder: text visible in input-feld when nothing is written-->
                 <!-- type=text: we get a text-input-field. opt=date, time, url, ...
                    th:field=frage -> to save the input in the variable from object of class-->

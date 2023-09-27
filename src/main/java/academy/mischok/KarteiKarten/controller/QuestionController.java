@@ -18,7 +18,7 @@ public class QuestionController {
 	
 	@GetMapping ("/question_form")
 	public String getQuestion(Model model) {
-		model.addAttribute("question",  buildQuestionModel());
+		model.addAttribute("question",  new Question());
 		
 		questionRepository.findAll();
 		
@@ -32,7 +32,4 @@ public class QuestionController {
 		return "question_added";
 	}
 	
-	private Question buildQuestionModel(){
-		return new Question();
-	}
 }

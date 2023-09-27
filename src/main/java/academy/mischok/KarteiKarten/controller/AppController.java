@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class AppController {
-    @GetMapping("/")
+   /* @GetMapping("/")
     public String index() {
         return "index";
-    }
+    }*/
     @GetMapping("/karteikarten")
     public String getKarteikarten(){
         return "karteikarten";
