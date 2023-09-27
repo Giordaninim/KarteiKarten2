@@ -15,7 +15,7 @@ public class QuestionRepository implements CrudRepository<Question, Integer> {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	@Autowired
-	private QuestionRowMapper rowMapper;
+	private QuestionRowMapper rowMapper; //?
 	
 	@Override
 	public List<Question> findAll() {
