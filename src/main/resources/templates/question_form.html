@@ -31,9 +31,9 @@
     <h1>Question registration</h1>
     <form action="#" th:action="@{/question_form}" method="post" th:object="${question}">
         <label>Question:</label>
-        <input type="text" th:field="*{frage}"/><br/>
-        <label>Answer:</label>
-        <input type="text" th:field="*{antwort}"/><br/>
+        <input style="color:green" placeholder="type your question here" type="text" th:field="*{frage}"/><br/>
+        <label >Answer:</label>
+        <input style="color:red" placeholder="type your answer here" type="text" th:field="*{antwort}"/><br/>
         <button type="submit">Submit</button>
 
     </form>
