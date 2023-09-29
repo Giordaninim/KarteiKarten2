@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <title>Question Read</title>
+</head>
+<body>
+
+<div th:insert="~{fragments/template :: navbar}"></div>
+<br>
+<div align="center">
+    <h2>All Questions!</h2>
+
+   <!-- <span>Frage:</span><span th:text="${question.frage}"></span><br/>
+    <span>Antwort:</span><span th:text="${question.antwort}"></span><br/>-->
+   <table style="border:1px solid">
+       <tr style="border:1px solid"> <th>Just added - row</th>
+       </tr>
+       <tr>
+           <th>Frage</th>
+           <th>Antowrt</th>
+           <th>ID</th>
+       </tr>
+    <tr th:each="question: ${questions}">
+
+        <td th:text="${question.frage}"/>
+        <td th:text="${question.antwort}"/>
+        <td th:text="${question.id}"/>
+
+    </tr>
+   </table>
+</div>
+
+<div th:insert="~{fragments/template :: footer}"></div>
+</body>
+</html>
+<body>

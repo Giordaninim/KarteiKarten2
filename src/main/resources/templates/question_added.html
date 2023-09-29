@@ -12,12 +12,27 @@
     </style>
 </head>
 <body>
+test
 <div align="center">
     <h2>Question added success!</h2>
     <span>Frage:</span><span th:text="${question.frage}"></span><br/>
     <span>Antwort:</span><span th:text="${question.antwort}"></span><br/>
+    <span>id:</span><span th:text="${question.id}"></span><br/>
 
 </div>
+<!--
+//${} für lesen
+// *{}  für input-->
+<!--<table>
+    <tr>
+        <th style="color:red"> ID</th>
+    </tr>
+    <tr th:each="question">
+
+        <td th:text="${id}"/>
+    </tr>
+</table>-->
+
 
 
 </body>

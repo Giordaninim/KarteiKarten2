@@ -1,34 +1,15 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <style type="text/css">
-        label {
-            display: inline-block;
-            width: 200px;
-            margin: 5px;
-            text-align: left;
-        }
-        input[type=text], input[type=password], select {
-            display: inline-block;
-            width: 200px;
-        }
-        input[type=radio] {
-            margin-left: 45px;
-        }
-        input[type=checkbox] {
-            margin-right: 190px;
-        }
-        button {
-            padding: 5px;
-            margin: 10px;
-        }
-        #frage{color:red;}
-        #input_answer{color:green;}
-    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <title>Question Form</title>
 </head>
 <body>
+<div th:insert="~{fragments/template :: navbar}"></div>
+<br>
 <div align="center">          <!--th:field setzt id, name und value-Attribut mit den eingegebenen wert-->
     <h1 >Question registration</h1>
     <form action="#" th:action="@{/question_form}" method="post" th:object="${question}">
@@ -48,7 +29,8 @@
         <!-- || <button type="submit">Create User</button> || this does the same as input-type as below-->
         <input type="submit" value="Submit">
     </form>
-
 </div>
+<div th:insert="~{fragments/template :: footer}"></div>
+
 </body>
 </html>
