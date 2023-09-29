@@ -23,7 +23,6 @@ public class QuestionController {
 		model.addAttribute("question",  new Question());
 		
 		questionRepository.findAll();
-		
 		return "question_form";
 	}
 	
@@ -31,7 +30,7 @@ public class QuestionController {
 	public String postQuestion(@ModelAttribute ("question") Question question) {
 		//System.out.println(question);
 		questionRepository.save1(question.getFrage(),question.getAntwort());
-		return "redirect:/question_read"; //_added
+		return "redirect:/question_added"; //_added
 	}
 	
 	@GetMapping ("question_read")
@@ -42,8 +41,8 @@ public class QuestionController {
 	}
 	
 	@GetMapping ("question_added")
-	public String questionAdded(Model model) {
-		Question question= new Question();
+	public String readLastQuestion (Model model) {
+		Question question= questionRepository.readLastQuestion();
 		model.addAttribute("question", question);
 	return ("question_added");
 	}

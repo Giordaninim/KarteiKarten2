@@ -15,10 +15,51 @@
 test
 <div align="center">
     <h2>Question added success!</h2>
-    <span>Frage:</span><span th:text="${question.frage}"></span><br/>
+    <!--<span>Frage:</span><span th:text="${question.frage}"></span><br/>
     <span>Antwort:</span><span th:text="${question.antwort}"></span><br/>
-    <span>id:</span><span th:text="${question.id}"></span><br/>
+    <span>id:</span><span th:text="${question.id}"></span><br/>-->
 
+</div>
+
+
+<table align="center" style="border:1px solid">
+    <tr style="border:1px solid"> <th>Just added - row</th>
+    </tr>
+    <tr>
+        <th>Frage</th>
+        <th>Antowrt</th>
+        <th>ID</th>
+    </tr>
+    <tr>
+
+        <td th:text="${question.frage}"/>
+        <td th:text="${question.antwort}"/>
+        <td th:text="${question.id}"/>
+
+    </tr>
+</table>
+<!--
+//question_form:
+-->
+<div align="center">          <!--th:field setzt id, name und value-Attribut mit den eingegebenen wert-->
+    <h1 >Question registration</h1>
+    <form action="#" th:action="@{/question_form}" method="post" th:object="${question}">
+        <!--          th:action= URL an, an den das Formular die Daten senden wird
+                                                       ${question} is the object of class Question-->
+        <label>Question:</label>
+        <input style="color:red" type="text" required placeholder="Enter Question" th:field="${question.frage}"/><br/>
+        <!--        <input type="text" required placeholder="Enter Question" th:id="*{frage}" th:name="${question.frage}" th:value="${question.frage}"/><br/>-->
+
+        <!-- id="xxx" is only css-style, not DB-table-->
+        <!-- placeholder: text visible in input-feld when nothing is written-->
+        <!-- type=text: we get a text-input-field. opt=date, time, url, ...
+           th:field=frage -> to save the input in the variable from object of class-->
+
+        <label>Answer:</label>
+        <input id="input_answer" type="text" required placeholder="Enter Answer" th:field="*{antwort}"/><br/>
+        <!-- || <button type="submit">Create User</button> || this does the same as input-type as below-->
+        <input type="submit" value="Submit">
+    </form>
 </div>
 <!--
 //${} für lesen

@@ -39,32 +39,24 @@ public class QuestionRepository implements CrudRepository<Question, Integer> {
 		System.out.println(questions);
 		return questions;
 	}
+	public Question readLastQuestion() {
+		String sql = "SELECT * FROM frage WHERE ID=(SELECT MAX(ID))";
+		Question question = jdbcTemplate.queryForObject(sql, new QuestionRowMapper());
+		return question;
+	}
 	
 	@Override
 	public Question findById(Integer integer) {
 		return null;
 	}
 	
-	@Override
+		@Override
 	public Question save(Question entity) {
 		return null;
 	}
 	
-	public List<Question> readLastId() {
-/*
-		String sql = "SELECT * FROM frage";
-*/
-		String sql = "SELECT MAX(id) FROM frage";
-		
-		List<Question> questions = jdbcTemplate.query(sql, new QuestionRowMapper());
-		return questions;
-	}
 	
-	public List<Question> readLastQuestion() {
-		String sql = "SELECT MAX(id) FROM frage";
-		List<Question> questions = jdbcTemplate.query(sql, new QuestionRowMapper());
-		return questions;
-	}
+
 	public void save1(String frage, String antwort) {
 		String sql = "insert into frage (frage, antwort) values (?, ?)";
 		int row=  jdbcTemplate.update(sql, frage, antwort);
