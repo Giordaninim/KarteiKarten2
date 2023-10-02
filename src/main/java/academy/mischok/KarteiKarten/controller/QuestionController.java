@@ -33,12 +33,7 @@ public class QuestionController {
 		return "redirect:/question_added"; //_added
 	}
 	
-	@GetMapping ("question_read")
-	public String readQuestion(Model model) {
-		List<Question> questions= questionRepository.findAll();
-		model.addAttribute("questions", questions);
-		return "question_read";
-	}
+	
 	
 	@GetMapping ("question_added")
 	public String readLastQuestion (Model model) {
@@ -57,5 +52,12 @@ public class QuestionController {
 		System.out.println(question);
 		questionRepository.save1(question.getFrage(),question.getAntwort());
 		return "redirect:/question_added"; //_added
+	}
+	
+	@GetMapping ("question_read")
+	public String readQuestion(Model model) {
+		List<Question> questions= questionRepository.findAll();
+		model.addAttribute("questions", questions);
+		return "question_read";
 	}
 }
