@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <title>Question Edit</title>
+</head>
+<body>
+<div th:insert="~{fragments/template :: navbar}"></div>
+<br>
+
+<div align="center">          <!--th:field setzt id, name und value-Attribut mit den eingegebenen wert-->
+  <h1 >Question registration</h1>
+  <form action="#" th:action="@{/question_edit}" method="post" th:object="${question}">
+
+    <label>Question:</label>
+    <input  style="color:red" type="text" required th:placeholder="${question.frage} " th:field="${question.frage}"/><br/>
+
+   <label>Answer:</label>
+    <input id="input_answer" type="text" required placeholder="Enter Answer" th:field="*{antwort}"/><br/>
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+<div th:insert="~{fragments/template :: footer}"></div>
+
+</body>
+</html>

@@ -46,5 +46,16 @@ public class QuestionController {
 		model.addAttribute("question", question);
 	return ("question_added");
 	}
+	@GetMapping ("question_edit")
+	public String editThisQuestion (Model model) {
+		model.addAttribute("question", new Question());
+		return "/question_edit";
+	}
 	
+	@PostMapping ("/question_edit")
+	public String editQuestion(@ModelAttribute ("question") Question question) {
+		System.out.println(question);
+		questionRepository.save1(question.getFrage(),question.getAntwort());
+		return "redirect:/question_added"; //_added
+	}
 }
