@@ -47,7 +47,8 @@ public class QuestionRepository implements CrudRepository<Question, Integer> {
 	
 	@Override
 	public Question findById(Integer integer) {
-		return null;
+		String sql = "SELECT * FROM frage WHERE ID = %d".formatted(integer);
+		return jdbcTemplate.queryForObject(sql, new QuestionRowMapper());
 	}
 	
 		@Override

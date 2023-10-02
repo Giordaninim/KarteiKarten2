@@ -11,16 +11,37 @@
 <div th:insert="~{fragments/template :: navbar}"></div>
 <br>
 
+
+<table align="center" style="border:1px solid">
+    <tr style="border:1px solid"> <th>Your Question</th>
+    </tr>
+    <tr>
+        <th>Frage</th>
+        <th>Antwort</th>
+
+    </tr>
+    <tr>
+
+        <td th:text="${neufrage.frage}"/>
+        <td th:text="${neufrage.antwort}"/>
+       <!-- <td th:text="${question.id}"/>-->
+
+    </tr>
+</table>
+
+
+
+
 <div align="center">          <!--th:field setzt id, name und value-Attribut mit den eingegebenen wert-->
-  <h1 >Question registration</h1>
+  <h1 >Question edit</h1>
   <form action="#" th:action="@{/question_edit}" method="post" th:object="${question}">
 
     <label>Question:</label>
-    <input  style="color:red" type="text" required th:placeholder="${question.frage} " th:field="${question.frage}"/><br/>
+    <input  style="color:red" type="text" required th:placeholder="${neufrage.frage} " th:field="${question.frage}"/><br/>
 
    <label>Answer:</label>
-    <input id="input_answer" type="text" required placeholder="Enter Answer" th:field="*{antwort}"/><br/>
-    <input type="submit" value="Submit">
+    <input cus="true" id="input_answer" type="text" required th:placeholder="${neufrage.antwort}" th:field="*{antwort}"/><br/>
+    <input type="submit" value="change">
   </form>
 </div>
 

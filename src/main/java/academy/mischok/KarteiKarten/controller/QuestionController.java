@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
@@ -41,9 +42,10 @@ public class QuestionController {
 		model.addAttribute("question", question);
 	return ("question_added");
 	}
-	@GetMapping ("question_edit")
-	public String editThisQuestion (Model model) {
+	@GetMapping ("question_edit/{id}")
+	public String editThisQuestion (Model model, @PathVariable int id) {
 		model.addAttribute("question", new Question());
+		model.addAttribute("neufrage", questionRepository.findById(id));
 		return "/question_edit";
 	}
 	
