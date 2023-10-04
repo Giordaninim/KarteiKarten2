@@ -5,18 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <title>QUIZZZZZZ</title>
+    <title>Quiz</title>
 </head>
 <body>
 <div th:insert="~{fragments/template :: navbar}"></div>
 
-<div class="container">
-    <div class="row">
+<div class="container" align=center>
 
-        <div th:insert="~{fragments/template :: card}"></div>
+
+    <div class="box-item col-md-4">
+        <div class="flip-box">
+            <div class="flip-box-front text-center" style="background-image: url(/img/Karteikarten.jpg);">
+                <div class="inner color-white">
+                    <h3 class="flip-box-header">Question</h3>
+                    <div th:text="${question.frage}"/>
+                    <p></p>
+
+                </div>
+            </div>
+            <div class="flip-box-back text-center" style="background-image: url(/img/Karteikarten.jpg);">
+                <div class="inner color-white">
+                    <h3 class="flip-box-header">Answer</h3>
+                    <div th:text="${question.antwort}"/>
+
+
+                </div>
+            </div>
+        </div>
     </div>
 
+
 </div>
+<p align=center>
+    <button onclick="location.href = 'quiz';" type="button" class="btn btn-success"
+            style="margin-top: 5rem; --bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem;
+            --bs-btn-font-size:20px .75rem;">Richtig</button>
+
+
+    <button onclick="location.href = 'quiz';" type="button" class="btn btn-danger"
+            style="margin-top: 5rem; --bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem;
+            --bs-btn-font-size:20px .75rem;">Falsch</button>
+</p>
 
 
 <div th:insert="~{fragments/template :: footer}"></div>

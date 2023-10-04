@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="ISO-8859-1">
-    <title>Registration Success</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <title>Added</title>
     <style type="text/css">
         span {
             display: inline-block;
@@ -12,37 +15,40 @@
     </style>
 </head>
 <body>
-test
-<div align="center">
+
+<div th:insert="~{fragments/template :: navbar}"></div>
+<br>
+<!--<div align="center">
     <h2>Question added success!</h2>
-    <!--<span>Frage:</span><span th:text="${question.frage}"></span><br/>
+    &lt;!&ndash;<span>Frage:</span><span th:text="${question.frage}"></span><br/>
     <span>Antwort:</span><span th:text="${question.antwort}"></span><br/>
-    <span>id:</span><span th:text="${question.id}"></span><br/>-->
+    <span>id:</span><span th:text="${question.id}"></span><br/>&ndash;&gt;
 
-</div>
+</div>-->
 
 
-<table align="center" style="border:1px solid">
-    <tr style="border:1px solid"> <th>Just added - row</th>
+<table class="table w-75" align="center" style="border:1px solid">
+    <tr style="border:1px solid" >
+        <th class="text-center" colspan="2"  >Just added</th>
     </tr>
+
+
     <tr>
         <th>Frage</th>
-        <th>Antowrt</th>
+        <th>Antwort</th>
 
     </tr>
     <tr>
 
         <td th:text="${question.frage}"/>
         <td th:text="${question.antwort}"/>
-        <td th:text="${question.id}"/>
+       <!-- <td th:text="${question.id}"/>-->
 
     </tr>
 </table>
-<!--
-//question_form:
--->
+<br>
 <div align="center">          <!--th:field setzt id, name und value-Attribut mit den eingegebenen wert-->
-    <h1 >Question registration</h1>
+    <h1 >Next Question</h1>
     <form action="#" th:action="@{/question_form}" method="post" th:object="${question}">
         <!--          th:action= URL an, an den das Formular die Daten senden wird
                                                        ${question} is the object of class Question-->
@@ -62,8 +68,8 @@ test
     </form>
 </div>
 <!--
-//${} für lesen
-// *{}  für input-->
+//${} fÃ¼r lesen
+// *{}  fÃ¼r input-->
 <!--<table>
     <tr>
         <th style="color:red"> ID</th>

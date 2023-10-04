@@ -8,6 +8,8 @@ public class Question {
 	private Integer id;
 private String frage;
 private String antwort;
+private Integer gestellt;
+private Integer richtig;
 	public String getFrage() {
 		return frage;
 	}
@@ -30,6 +32,23 @@ private String antwort;
 	}
 	
 	public Question() {};
+	
+	public Integer getGestellt() {
+		return gestellt;
+	}
+	
+	public void setGestellt(Integer gestellt) {
+		this.gestellt = gestellt;
+	}
+	
+	public Integer getRichtig() {
+		return richtig;
+	}
+	
+	public void setRichtig(Integer richtig) {
+		this.richtig = richtig;
+	}
+	
 	public Question(int id, String frage, String antwort) {
 		this.frage=frage;
 		this.antwort=antwort;

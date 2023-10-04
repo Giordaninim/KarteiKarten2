@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <title>Question Read</title>
+    <title>Read</title>
 </head>
 <body>
 
@@ -55,7 +55,7 @@
 
 <div>
     <h2 style="text-align:center">All Questions!</h2>
-<table class="table">
+<table align="center" class="table w-75">
     <thead>
     <tr>
         <th scope="col">#</th>
@@ -85,7 +85,7 @@
             <a th:href="@{/question_edit/{id}(id = ${question.id})}">
                 <span type="button" class="btn btn-outline-danger " th:text="delete"></span></a>
         </div>
-
+  <!--  <td th:text="${question.}"-->
 
     </tr>
     </tbody>
@@ -93,7 +93,7 @@
 </div>
 
 
-<!--<div th:insert="~{fragments/template :: footer}"></div>-->
+<div th:insert="~{fragments/template :: footer}"></div>
 </body>
 </html>
 <body>

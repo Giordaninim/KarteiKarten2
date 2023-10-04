@@ -16,10 +16,10 @@ public class AppController {
     public String getKarteikarten(){
         return "karteikarten";
     }
-    @GetMapping("/quiz")
+    /*@GetMapping("/quiz")
     public String getQuiz() {
         return "quiz";
-    }
+    }*/
     @GetMapping("/test")
     public String getTest() {
         return "test";

@@ -46,7 +46,7 @@ public class QuestionController {
 	public String editThisQuestion (Model model, @PathVariable int id) {
 		model.addAttribute("question", new Question());
 		model.addAttribute("neufrage", questionRepository.findById(id));
-		return "/question_edit";
+		return "question_edit";
 	}
 	
 	@PostMapping ("/question_edit")

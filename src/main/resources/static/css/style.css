@@ -14,14 +14,14 @@ body{
     margin-top: 150px;
 }
 
-.flip-box-front, 
+.flip-box-front,
 .flip-box-back{
     background-image: linear-gradient(rgba(41, 41, 41, 0.5), rgba(0, 0, 0, 0.829));
     background-size: cover;
     background-position: center;
     border-radius: 15px;
     min-height: 400px;
-    transition:transform 0.7s cubic-bezier(.4,.2,.2,1);
+    transition:transform 2s cubic-bezier(.4,.2,.2,1);
     backface-visibility: hidden;
 }
 
@@ -73,6 +73,14 @@ body{
 
 .flip-box-img{
     margin-top:25px;
+}
+
+.navbar {
+position: fixed
+top: 0;
+width: 100%;
+z-index: 1000;
+!important
 }
 
 /*

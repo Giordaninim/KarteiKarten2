@@ -24,10 +24,6 @@ public class QuestionRepository implements CrudRepository<Question, Integer> {
 		return questions2;
 		
 		}
-	
-	
-	
-	
 	@Autowired
 	private QuestionRowMapper rowMapper; //?
 	
@@ -47,7 +43,7 @@ public class QuestionRepository implements CrudRepository<Question, Integer> {
 	
 	@Override
 	public Question findById(Integer integer) {
-		String sql = "SELECT * FROM frage WHERE ID = %d".formatted(integer);
+		String sql = "SELECT * FROM frage WHERE id = %d".formatted(integer);
 		return jdbcTemplate.queryForObject(sql, new QuestionRowMapper());
 	}
 	
@@ -55,11 +51,9 @@ public class QuestionRepository implements CrudRepository<Question, Integer> {
 	public Question save(Question entity) {
 		return null;
 	}
-	
-	
 
 	public void save1(String frage, String antwort) {
-		String sql = "insert into frage (frage, antwort) values (?, ?)";
+		String sql = "insert into frage (frage, antwort, gestellt, richtig) values (?, ?, 0, 0)";
 		int row=  jdbcTemplate.update(sql, frage, antwort);
 		
 	}
@@ -73,12 +67,13 @@ public class QuestionRepository implements CrudRepository<Question, Integer> {
 	public void update(Question entity) {
 	
 	}
-	/*@Override
-	public Iterable<Question> findAll() {
-		String sql = "SELECT * FROM frage";
-		return null;
-	}*/
 	
-	
-	
+	public Question findByRandomFrage() {
+		String sql = "SELECT *  FROM frage ORDER BY RANDOM() LIMIT 1";
+		return jdbcTemplate.queryForObject(sql, new QuestionRowMapper());
 	}
+	
+	
+	
+	
+}
