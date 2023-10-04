@@ -11,47 +11,11 @@
 
 <div th:insert="~{fragments/template :: navbar}"></div>
 <br>
+<br>
+<br>
+<br>
+<br>
 
-<!--ERSTE TYPE TABELLE-->
-<!--<div align="center">
-    <h2>All Questions!</h2>
-
-   &lt;!&ndash; <span>Frage:</span><span th:text="${question.frage}"></span><br/>
-    <span>Antwort:</span><span th:text="${question.antwort}"></span><br/>&ndash;&gt;
-   <table style="border:1px solid">
-       <tr style="border:1px solid"> <tr>Just added - row</tr>
-       </tr>
-       <tr>
-           <th>ID</th>
-           <th>Frage</th>
-           <th>Antwort</th>
-           <th>clickme</th>
-       </tr>
-       <th>
-
-       </th>
-
-       <tr th:each="question: ${questions}">
-
-
-
-        <td th:text="${question.id}"/>
-
-        <td th:text="${question.frage}"/>
-        <td th:text="${question.antwort}"/>
-           <td  style="color:orange" >
-               <button  style="border:1px solid" onclick="location.href = 'question_edit';" type="button" class="btn ">edit</button>
-           </td>
-           <td style="color:red" >
-               <button  style="border:1px solid" onclick="location.href = 'karteikarten';" type="button" class="btn ">delete</button>
-           </td>
-
-           &lt;!&ndash;  <button onclick="location.href = 'karteikarten';" type="button" class="btn btn-primary"
-                     style="&#45;&#45;bs-btn-padding-y: .25rem; &#45;&#45;bs-btn-padding-x: .5rem; &#45;&#45;bs-btn-font-size:20px .75rem;">Create</button>&ndash;&gt;
-    </tr>
-
-   </table>
-</div>-->
 
 <div>
     <h2 style="text-align:center">All Questions!</h2>
@@ -61,6 +25,7 @@
         <th scope="col">#</th>
         <th scope="col">Frage</th>
         <th scope="col">Antwort</th>
+        <th scope="col">Result in %</th>
         <th scope="col">Handle</th>
     </tr>
     </thead>
@@ -72,26 +37,21 @@
 
     <td th:text="${question.frage}"/>
     <td th:text="${question.antwort}"/>
-    <td  >
-     <!--   <button   onclick="location.href = 'question_edit';" type="button" class="btn btn-outline-warning ">edit</button>
+    <td th:text="${question.richtig}/${question.gestellt}*100"/>
+         <td th:text="${question.r}"/>
 
-        <button   onclick="location.href = 'question_edit';" type="button" class="btn btn-outline-warning ">edit</button>
 
-        <button   onclick="location.href = 'karteikarten';" type="button" class="btn btn-outline-danger">delete</button>-->
-
+    <td>
         <div th:each="question : ${question}">
             <a th:href="@{/question_edit/{id}(id = ${question.id})}">
                 <span type="button" class="btn btn-outline-warning " th:text="edit"></span></a>
             <a th:href="@{/question_edit/{id}(id = ${question.id})}">
                 <span type="button" class="btn btn-outline-danger " th:text="delete"></span></a>
         </div>
-  <!--  <td th:text="${question.}"-->
-
     </tr>
     </tbody>
 </table>
 </div>
-
 
 <div th:insert="~{fragments/template :: footer}"></div>
 </body>

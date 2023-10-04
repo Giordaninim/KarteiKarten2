@@ -40,13 +40,11 @@ public class QuestionRepository implements CrudRepository<Question, Integer> {
 		Question question = jdbcTemplate.queryForObject(sql, new QuestionRowMapper());
 		return question;
 	}
-	
 	@Override
 	public Question findById(Integer integer) {
 		String sql = "SELECT * FROM frage WHERE id = %d".formatted(integer);
 		return jdbcTemplate.queryForObject(sql, new QuestionRowMapper());
 	}
-	
 		@Override
 	public Question save(Question entity) {
 		return null;
@@ -55,22 +53,19 @@ public class QuestionRepository implements CrudRepository<Question, Integer> {
 	public void save1(String frage, String antwort) {
 		String sql = "insert into frage (frage, antwort, gestellt, richtig) values (?, ?, 0, 0)";
 		int row=  jdbcTemplate.update(sql, frage, antwort);
-		
 	}
-	
 	@Override
 	public void delete(Question entity) {
 	
 	}
-	
 	@Override
 	public void update(Question entity) {
-	
 	}
-	
 	public Question findByRandomFrage() {
 		String sql = "SELECT *  FROM frage ORDER BY RANDOM() LIMIT 1";
-		return jdbcTemplate.queryForObject(sql, new QuestionRowMapper());
+		Question question = jdbcTemplate.queryForObject(sql, new QuestionRowMapper());
+		//System.out.println(question);
+		return question;
 	}
 	
 	

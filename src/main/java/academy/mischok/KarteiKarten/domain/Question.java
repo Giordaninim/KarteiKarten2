@@ -2,7 +2,6 @@ package academy.mischok.KarteiKarten.domain;
 
 import org.springframework.stereotype.Component;
 
-import javax.management.QueryEval;
 @Component
 public class Question {
 	private Integer id;
@@ -10,6 +9,18 @@ private String frage;
 private String antwort;
 private Integer gestellt;
 private Integer richtig;
+private Double r;
+// TODO: warum double lauft nicht???
+	
+	
+	public Double getR() {
+		return r;
+	}
+	
+	public void setR(Double r) {
+		this.r = r;
+	}
+	
 	public String getFrage() {
 		return frage;
 	}
@@ -34,6 +45,7 @@ private Integer richtig;
 	public Question() {};
 	
 	public Integer getGestellt() {
+		
 		return gestellt;
 	}
 	

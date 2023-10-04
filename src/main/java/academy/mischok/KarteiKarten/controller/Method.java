@@ -6,14 +6,15 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Method {
-	@Autowired
-	public Question question;
+
 	
-	public double result() {
-		/*double richtig = Double.valueOf(question.getRichtig());
+	public double result(Question question) {
+		
+		double richtig = Double.valueOf(question.getRichtig());
 		double gestellt = Double.valueOf(question.getGestellt());
-		double r= richtig/gestellt*100;*/
-		double r=11.7;
+		double r= richtig/gestellt*100;
+		question.setR(r);
 		return r;
 	}
+	
 }

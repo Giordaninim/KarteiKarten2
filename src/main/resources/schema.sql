@@ -13,7 +13,7 @@ insert into frage (frage, antwort, gestellt, richtig) values ('Frage 3', ' Antow
 insert into frage (frage, antwort, gestellt, richtig) values ('Frage 4', ' Antowrt 4', 6, 2);
 insert into frage (frage, antwort, gestellt, richtig) values ('Frage 5', ' Antowrt 5', 7, 6);
 insert into frage (frage, antwort, gestellt, richtig) values ('Frage 6', ' Antowrt 6', 11, 4);
-insert into frage (frage, antwort, gestellt, richtig) values ('Frage 7', ' Antowrt 7', 0, 0);
-insert into frage (frage, antwort, gestellt, richtig) values ('Frage 8', ' Antowrt 8', 0, 0);
-insert into frage (frage, antwort, gestellt, richtig) values ('Frage 9', ' Antowrt 9', 0, 0);
+insert into frage (frage, antwort, gestellt, richtig) values ('Frage 7', ' Antowrt 7', 2, 2);
+insert into frage (frage, antwort, gestellt, richtig) values ('Frage 8', ' Antowrt 8', 5, 3);
+insert into frage (frage, antwort, gestellt, richtig) values ('Frage 9', ' Antowrt 9', 6, 3);
 

@@ -12,12 +12,15 @@ public class QuizController {
 	private	QuestionRepository questionRepo;
 	@Autowired
 	public Method method;
-	@Autowired
-	Question question;
 	@GetMapping ("/quiz")
 	public String getFirstQuestion(Model model) {
-		model.addAttribute("question", questionRepo.findByRandomFrage());
-		System.out.println(method.result() +" "+ question.getId());
+		Question question = questionRepo.findByRandomFrage();
+		model.addAttribute("question", question);
+		System.out.println(question);
+		double r= method.result(question);
+		
+/*		double r= ((double)question.getRichtig() / (double)question.getGestellt()*100);*/
+		System.out.println(question.getId() + " " + Math.round(r));
 		return "quiz";
 	}
 	
