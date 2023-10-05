@@ -9,15 +9,13 @@ private String frage;
 private String antwort;
 private Integer gestellt;
 private Integer richtig;
-private Double r;
-// TODO: warum double lauft nicht???
-	
-	
-	public Double getR() {
+private Integer r;
+
+	public Integer getR() {
 		return r;
 	}
 	
-	public void setR(Double r) {
+	public void setR(Integer r) {
 		this.r = r;
 	}
 	

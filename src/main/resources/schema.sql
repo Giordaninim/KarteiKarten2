@@ -1,4 +1,4 @@
-create table Frage(
+CREATE TABLE frage (
   ID int NOT NULL AUTO_INCREMENT,
   frage varchar(250) not null,
   antwort varchar(500),

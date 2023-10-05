@@ -21,14 +21,18 @@ public class QuestionReadController {
 	@GetMapping ("question_read")
 	public String readQuestion(Model model) {
 		List<Question> questions= questionRepository.findAll();
+		
+		/*for (Question c: questions) {
+			double r = Double.valueOf(c.getRichtig())/Double.valueOf(c.getGestellt())*100;
+			c.setR((int) Math.round(r));	}*/
+		
+		for (Question question1 : questions) {
+			method.calculateResult(question1);
+		}
 		model.addAttribute("questions", questions);
 		
-		double richtig = Double.valueOf(questions.get(0).getRichtig());
-		double gestellt = Double.valueOf(questions.get(0).getGestellt());
-		double r= richtig/gestellt*100;
 		
 		
-		System.out.println("kek"+r);
 		
 		
 		
