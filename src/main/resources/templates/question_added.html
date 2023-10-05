@@ -17,7 +17,7 @@
 <body>
 
 <div th:insert="~{fragments/template :: navbar}"></div>
-<br>
+<br> <br> <br> <br> <br>
 <!--<div align="center">
     <h2>Question added success!</h2>
     &lt;!&ndash;<span>Frage:</span><span th:text="${question.frage}"></span><br/>
@@ -49,11 +49,11 @@
 <br>
 <div align="center">          <!--th:field setzt id, name und value-Attribut mit den eingegebenen wert-->
     <h1 >Next Question</h1>
-    <form action="#" th:action="@{/question_form}" method="post" th:object="${question}">
+    <form action="#" class="table mb-3" th:action="@{/question_form}" method="post" th:object="${question}">
         <!--          th:action= URL an, an den das Formular die Daten senden wird
                                                        ${question} is the object of class Question-->
-        <label>Question:</label>
-        <input style="color:red" type="text" required placeholder="Enter Question" th:field="${question.frage}"/><br/>
+        <label class="form-label">Question:</label>
+        <input class="form-control w-75" style="color:red" type="text" required placeholder="Enter Question" th:field="${question.frage}"/><br/>
         <!--        <input type="text" required placeholder="Enter Question" th:id="*{frage}" th:name="${question.frage}" th:value="${question.frage}"/><br/>-->
 
         <!-- id="xxx" is only css-style, not DB-table-->
@@ -61,8 +61,10 @@
         <!-- type=text: we get a text-input-field. opt=date, time, url, ...
            th:field=frage -> to save the input in the variable from object of class-->
 
-        <label>Answer:</label>
-        <input id="input_answer" type="text" required placeholder="Enter Answer" th:field="*{antwort}"/><br/>
+        <label class="form-label">Answer:</label>
+        <input id="input_answer" class="form-control w-75" style="color:green" type="text" required placeholder="Enter Answer" th:field="*{antwort}"/>
+        <br>
+        <br>
         <!-- || <button type="submit">Create User</button> || this does the same as input-type as below-->
         <input type="submit" value="Submit">
     </form>

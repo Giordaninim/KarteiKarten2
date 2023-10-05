@@ -9,7 +9,7 @@
 </head>
 <body>
 <div th:insert="~{fragments/template :: navbar}"></div>
-<br>
+<br> <br> <br> <br> <br>
 
 
 <table align="center" style="border:1px solid">
@@ -20,6 +20,7 @@
         <th>Antwort</th>
 
     </tr>
+
     <tr>
 
         <td th:text="${neufrage.frage}"/>
@@ -30,7 +31,7 @@
 </table>
 
 
-
+<br>
 
 <div align="center">          <!--th:field setzt id, name und value-Attribut mit den eingegebenen wert-->
   <h1 >Question edit</h1>
@@ -40,7 +41,8 @@
     <input  style="color:red" type="text" required th:placeholder="${neufrage.frage} " th:field="${question.frage}"/><br/>
 
    <label>Answer:</label>
-    <input cus="true" id="input_answer" type="text" required th:placeholder="${neufrage.antwort}" th:field="*{antwort}"/><br/>
+    <input cus="true" id="input_answer" type="text" required th:placeholder="${neufrage.antwort}" th:field="*{antwort}"/>
+      <br> <br>
     <input type="submit" value="change">
   </form>
 </div>

@@ -10,11 +10,7 @@
 <body>
 
 <div th:insert="~{fragments/template :: navbar}"></div>
-<br>
-<br>
-<br>
-<br>
-<br>
+<br> <br> <br> <br> <br>
 
 
 <div>
@@ -38,7 +34,9 @@
     <td th:text="${question.frage}"/>
     <td th:text="${question.antwort}"/>
     <td th:text="${question.richtig}/${question.gestellt}*100"/>
+<!--
          <td th:text="${question.r}"/>
+-->
 
 
     <td>
