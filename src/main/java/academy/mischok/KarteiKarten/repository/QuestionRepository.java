@@ -57,9 +57,12 @@ public class QuestionRepository implements CrudRepository<Question, Integer> {
 	@Override
 	public void delete(Question entity) {
 	
+		
+	
 	}
 	@Override
 	public void update(Question entity) {
+	
 	}
 	public Question findByRandomFrage() {
 		String sql = "SELECT *  FROM frage ORDER BY RANDOM() LIMIT 1";
@@ -68,7 +71,13 @@ public class QuestionRepository implements CrudRepository<Question, Integer> {
 		return question;
 	}
 	
-	
-	
+	public void counterGestellt(int gestelltPlusEins, int id) {
+		String sql = "UPDATE frage SET gestellt = ? WHERE id=?";
+		int row= jdbcTemplate.update(sql, gestelltPlusEins, id);
+	}
+	public void counterRichtig(int richtigPlusEins, int id) {
+		String sql = "UPDATE frage SET richtig = ? WHERE id=?";
+		int row= jdbcTemplate.update(sql, richtigPlusEins, id);
+	}
 	
 }

@@ -33,8 +33,7 @@
             </div>
         </div>
     </div>
-</div>
-
+</div> <!--Card-->
 
 <p align=center>
     <button onclick="location.href = 'quiz';" type="button" class="btn btn-success"
@@ -45,7 +44,12 @@
     <button onclick="location.href = 'quiz';" type="button" class="btn btn-danger"
             style="margin-top: 5rem; --bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem;
             --bs-btn-font-size:20px .75rem;">Falsch</button>
-</p>
+</p> <!--richtig - falsch button-->
+
+<form action="#" th:action="@{/quiz}" method="post" th:object="${question}">
+    <input type="submit" value="change">
+</form>
+
 
 
 <div th:insert="~{fragments/template :: footer}"></div>

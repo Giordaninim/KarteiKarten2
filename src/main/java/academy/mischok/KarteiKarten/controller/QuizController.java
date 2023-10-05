@@ -5,25 +5,31 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class QuizController {
 	@Autowired private QuestionRepository questionRepo;
 	@Autowired public Method method;
 	@GetMapping ("/quiz")
-	public String getFirstQuestion(Model model) {
+	public String getAQuestion(Model model) {
 		Question question = questionRepo.findByRandomFrage();
 		model.addAttribute("question", question);
 		System.out.println(question);
-/*
-		double r= method.result(question);
-*/
-
-/*		double r= ((double)question.getRichtig() / (double)question.getGestellt()*100);*/
-/*
-		System.out.println(question.getId() + " " + Math.round(r));
-*/
+		
+		
+		int gestelltPlusEins = question.getGestellt() +1;
+		questionRepo.counterGestellt(gestelltPlusEins, question.getId());
+		System.out.println(gestelltPlusEins);
 		return "quiz";
 	}
+	@PostMapping ("/quiz")
+	public String counterRichtig(@ModelAttribute ("question") Question question) {
+		System.out.println(question);
+		questionRepo.counterRichtig(5, 3);
+		return "quiz";
+	}
+	
 	
 }
