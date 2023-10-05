@@ -1,12 +1,11 @@
 package academy.mischok.KarteiKarten.controller;
 import academy.mischok.KarteiKarten.domain.Question;
 import academy.mischok.KarteiKarten.repository.QuestionRepository;
+import jakarta.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class QuizController {
@@ -16,19 +15,22 @@ public class QuizController {
 	public String getAQuestion(Model model) {
 		Question question = questionRepo.findByRandomFrage();
 		model.addAttribute("question", question);
-		System.out.println(question);
+		//System.out.println(question);
 		
 		
 		int gestelltPlusEins = question.getGestellt() +1;
 		questionRepo.counterGestellt(gestelltPlusEins, question.getId());
-		System.out.println(gestelltPlusEins);
+		//System.out.println(gestelltPlusEins);
 		return "quiz";
 	}
-	@PostMapping ("/quiz")
-	public String counterRichtig(@ModelAttribute ("question") Question question) {
+	@PostMapping ("/quiz/{qid}")
+	public String counterRichtig(@PathVariable ("qid") int qid, @ModelAttribute ("question") Question question) {
+		question = questionRepo.findById(qid);
+		int richtigPlusEins = question.getRichtig()+1;
 		System.out.println(question);
-		questionRepo.counterRichtig(5, 3);
-		return "quiz";
+		System.out.println(richtigPlusEins);
+		questionRepo.counterRichtig(richtigPlusEins, qid);
+		return "redirect:/quiz";
 	}
 	
 	
