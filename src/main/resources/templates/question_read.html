@@ -14,7 +14,7 @@
 
 
 <div>
-    <h2 style="text-align:center">All Questions!</h2>
+    <h2 style="text-align:center">All Questions</h2>
 <table align="center" class="table w-75">
     <thead>
     <tr>
@@ -40,12 +40,14 @@
             <a th:href="@{/question_edit/{id}(id = ${question.id})}">
                 <span type="button" class="btn btn-outline-warning " th:text="edit"></span></a>
             <a th:href="@{/question_edit/{id}(id = ${question.id})}">
-                <span type="button" class="btn btn-outline-danger " th:text="delete"></span></a>
+                <span type="button"  class="btn btn-outline-danger " th:text="delete"></span></a>
+
         </div>
     </tr>
     </tbody>
 </table>
 </div>
+
 
 <div th:insert="~{fragments/template :: footer}"></div>
 </body>

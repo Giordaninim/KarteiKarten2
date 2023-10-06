@@ -52,7 +52,7 @@ public class QuestionRepository implements CrudRepository<Question, Integer> {
 
 	public void save1(String frage, String antwort) {
 		String sql = "insert into frage (frage, antwort, gestellt, richtig) values (?, ?, 0, 0)";
-		int row=  jdbcTemplate.update(sql, frage, antwort);
+		int row =  jdbcTemplate.update(sql, frage, antwort);
 	}
 	@Override
 	public void delete(Question entity) {
@@ -73,11 +73,20 @@ public class QuestionRepository implements CrudRepository<Question, Integer> {
 	
 	public void counterGestellt(int gestelltPlusEins, int id) {
 		String sql = "UPDATE frage SET gestellt = ? WHERE id=?";
-		int row= jdbcTemplate.update(sql, gestelltPlusEins, id);
+		int row = jdbcTemplate.update(sql, gestelltPlusEins, id);
 	}
 	public void counterRichtig(int richtigPlusEins, int id) {
 		String sql = "UPDATE frage SET richtig = ? WHERE id=?";
-		int row= jdbcTemplate.update(sql, richtigPlusEins, id);
+		int row = jdbcTemplate.update(sql, richtigPlusEins, id);
+	}
+	public void changeById(int id, String frage, String antwort, int gestellt, int richtig) {
+		String sql = "UPDATE frage SET frage = ?, antwort = ?, gestellt = ?, richtig = ? WHERE id = ?";
+		int row = jdbcTemplate.update(sql, frage, antwort, gestellt, richtig, id);
+	}
+	
+	public void deleteById(int id) {
+		String sql = "DELETE FROM frage WHERE id = ?;";
+		int row = jdbcTemplate.update(sql, id);
 	}
 	
 }

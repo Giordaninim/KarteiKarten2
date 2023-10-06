@@ -39,14 +39,7 @@
 
 <form action="#" th:action="@{/quiz/{qid}(qid= ${question.id})}" method="post" th:object="${question}">
 
-<!--    <p align=center>-->
-<!--    &lt;!&ndash;<button onclick="location.href = 'quiz';" type="button" class="btn btn-success"-->
-<!--            style="margin-top: 5rem; &#45;&#45;bs-btn-padding-y: .25rem; &#45;&#45;bs-btn-padding-x: .5rem;-->
-<!--            &#45;&#45;bs-btn-font-size:20px .75rem;">Richtig</button>&ndash;&gt;-->
-<!--&lt;!&ndash;richtig button&ndash;&gt;-->
-<!--    <input class="btn btn-success" type="submit" value="richtig" style="margin-top: 5rem; &#45;&#45;bs-btn-padding-y: .25rem; &#45;&#45;bs-btn-padding-x: .5rem;-->
-<!--            &#45;&#45;bs-btn-font-size:20px .75rem;">Korrekt</input>-->
-<!--    </p>-->
+
     <div class="d-flex justify-content-center mt-3">
         <button type="submit" class="btn btn-success mx-1">Korrekt</button>
         <button onclick="location.href = 'quiz';" type="button" class="btn btn-danger mx-1">Falsch</button>

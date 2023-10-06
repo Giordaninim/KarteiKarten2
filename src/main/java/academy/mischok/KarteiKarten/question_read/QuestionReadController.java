@@ -18,26 +18,15 @@ public class QuestionReadController {
 	@Autowired private Question question;
 
 	
-	@GetMapping ("question_read")
+	@GetMapping ("/question_read")
 	public String readQuestion(Model model) {
 		List<Question> questions= questionRepository.findAll();
-		
-		/*for (Question c: questions) {
-			double r = Double.valueOf(c.getRichtig())/Double.valueOf(c.getGestellt())*100;
-			c.setR((int) Math.round(r));	}*/
-		
+	
 		for (Question question1 : questions) {
 			method.calculateResult(question1);
 		}
 		model.addAttribute("questions", questions);
-		
-		
-		
-		
-		
-		
-		
-		
+
 		return "question_read";
 	}
 	
