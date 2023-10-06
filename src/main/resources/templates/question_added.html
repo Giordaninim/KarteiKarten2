@@ -6,18 +6,18 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>Added</title>
-    <style type="text/css">
+    <!--<style type="text/css">
         span {
             display: inline-block;
             width: 200px;
             text-align: left;
         }
-    </style>
+    </style>-->
 </head>
 <body>
 
 <div th:insert="~{fragments/template :: navbar}"></div>
-<br> <br> <br> <br> <br>
+<div style="padding:250px">
 <!--<div align="center">
     <h2>Question added success!</h2>
     &lt;!&ndash;<span>Frage:</span><span th:text="${question.frage}"></span><br/>
@@ -68,6 +68,7 @@
         <!-- || <button type="submit">Create User</button> || this does the same as input-type as below-->
         <input type="submit" value="Submit">
     </form>
+</div>
 </div>
 <!--
 //${} für lesen

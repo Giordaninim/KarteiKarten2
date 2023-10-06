@@ -84,8 +84,8 @@ z-index: 1000;
 }
 
 .button_mischok {
-width: 250px;
-  min-height: 60px;
+  width: 200px;
+  min-height: 50px;
   color: #f9f9f9;
   text-align: center;
   letter-spacing: .1em;
@@ -96,7 +96,7 @@ width: 250px;
   border-radius: 5px;
   margin-top: 40px;
   margin-bottom: 25px;
-  padding: 16px 20px;
+  padding: 5px 10px;
   font-size: 20px;
   font-weight: 400;
   text-decoration: none;

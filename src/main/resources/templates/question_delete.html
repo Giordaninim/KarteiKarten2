@@ -9,8 +9,7 @@
 </head>
 <body>
 <div th:insert="~{fragments/template :: navbar}"></div>
-<br> <br> <br> <br> <br>
-
+<div    class="container" style="padding:250px">
 <h1 align=center >Question delete</h1>
 
 <table align="center" style="border:1px solid">
@@ -19,29 +18,21 @@
     <tr>
         <th>Frage</th>
         <th>Antwort</th>
-
     </tr>
-
     <tr>
-
         <td th:text="${oldQuestion.frage}"/>
         <td th:text="${oldQuestion.antwort}"/>
-        <!-- <td th:text="${question.id}"/>-->
-
     </tr>
 </table>
-
-
-<br>
+    <br>
 
 <div align="center">
 
-    <form action="#" th:action="@{/question_edit/{id}(id=${oldQuestion.id})}" method="post" th:object="${newQuestion}">
-
-
+    <form action="#" th:action="@{/question_delete/{id}(id=${oldQuestion.id})}" method="post" th:object="${newQuestion}">
         <button type="submit" class="btn btn-danger mx-1">Delete?</button>
-
     </form>
+</div>
+
 </div>
 
 <div th:insert="~{fragments/template :: footer}"></div>
