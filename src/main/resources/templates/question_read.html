@@ -13,16 +13,16 @@
 
 
 
-<div class="container" style="padding:250px">
+<div class="container" style="padding:200px">
     <h2 style="text-align:center">All Questions</h2>
-<table align="center" class="table w-100">
+<table  class="table w-100">
     <thead>
     <tr >
         <th  scope="col">#</th>
         <th  scope="col">Frage</th>
         <th  scope="col">Antwort</th>
-        <th  scope="col">Result in %</th>
-        <th class="col" scope="col">Handle</th>
+        <th class="col-md-auto" scope="col" align=center  style="text-align:center" >Result</th>
+        <th class="col" scope="col" style="text-align:center" >Handle</th>
     </tr>
     </thead>
     <tbody>
@@ -32,10 +32,10 @@
     <td th:text="${question.id}"/>
     <td th:text="${question.frage}"/>
     <td th:text="${question.antwort}"/>
-    <td align=center th:text="${question.r}"/>
+    <td style="text-align:center"  th:text="${question.r}"/>
 
 
-    <td>
+    <td width="145px">
         <div  th:each="question : ${question}">
 
             <a th:href="@{/question_edit/{id}(id = ${question.id})}">
