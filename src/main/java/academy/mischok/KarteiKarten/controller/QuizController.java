@@ -13,7 +13,7 @@ public class QuizController {
 	@Autowired public Method method;
 	@GetMapping ("/quiz")
 	public String getAQuestion(Model model) {
-		Question question = questionRepo.findByRandomFrage();
+		Question question = questionRepo.findByRandomFrageResult();
 		model.addAttribute("question", question);
 		//System.out.println(question);
 		
