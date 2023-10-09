@@ -14,4 +14,5 @@ public class Method {
 /*		System.out.println(richtig + "---" + gestellt + "---" + " --- " + r);		*/
 		question.setR((int) Math.round(r));
 	}
+	
 }

@@ -10,6 +10,7 @@ private String antwort;
 private Integer gestellt;
 private Integer richtig;
 private Integer r;
+private float rr;
 
 	public Integer getR() {
 		return r;
@@ -72,5 +73,13 @@ private Integer r;
 				", antwort='" + antwort + '\'' +
 				"id='" + id + '\''+
 				'}';
+	}
+	
+	public float getRr() {
+		return rr;
+	}
+	
+	public void setRr(float rr) {
+		this.rr = rr;
 	}
 }

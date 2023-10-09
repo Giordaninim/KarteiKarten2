@@ -18,11 +18,5 @@ public class AppController {
     public String getTest() {
         return "test";
     }
-    @GetMapping("/result")
-    public String getResult() {
-        return "result";
-    }
     
-    
-  
 }

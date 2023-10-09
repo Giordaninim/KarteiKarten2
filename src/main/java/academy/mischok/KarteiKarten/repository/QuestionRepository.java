@@ -78,6 +78,13 @@ public class QuestionRepository implements CrudRepository<Question, Integer> {
 		return question;
 	}
 	
+	public Question resultGlobal() {
+		String sql = "SELECT  (CAST (SUM(richtig) AS float)/SUM(gestellt)) as rr FROM frage";
+		Question question = jdbcTemplate.queryForObject(sql, new QuestionRowMapper());
+		//System.out.println(question);
+		return question;
+	}
+	
 	public void counterGestellt(int gestelltPlusEins, int id) {
 		String sql = "UPDATE frage SET gestellt = ? WHERE id=?";
 		int row = jdbcTemplate.update(sql, gestelltPlusEins, id);

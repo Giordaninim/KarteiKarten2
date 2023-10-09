@@ -37,13 +37,13 @@
         </div>
     </div>
 </div> <!--Card-->
-    <br><br>
+    <br>
 <form action="#" th:action="@{/quiz/{qid}(qid= ${question.id})}" method="post" th:object="${question}">
 
 
     <div class="d-flex justify-content-center mt-3">
-        <button type="submit" class="btn btn-success mx-1">Korrekt</button>
-        <button onclick="location.href = 'quiz';" type="button" class="btn btn-danger mx-1">Falsch</button>
+        <button type="submit" class="btn btn-success mx-1 button_mischok" style="color:#7FFF00" >Korrekt</button>
+        <button onclick="location.href = 'quiz';" type="button" class="btn btn-danger mx-1 button_mischok" style="color:#FF0033">Falsch</button>
     </div>
 
 </form>

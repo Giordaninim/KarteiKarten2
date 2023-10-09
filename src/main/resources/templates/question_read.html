@@ -39,11 +39,11 @@
         <div  th:each="question : ${question}">
 
             <a th:href="@{/question_edit/{id}(id = ${question.id})}">
-                <span type="button" class="btn btn-outline-warning " th:text="edit" style="box-shadow: 0 18px 20px -4px rgba(26,34,42,.3)">
+                <span type="button" class="btn btn-outline-warning button_mischok_kl "  th:text="edit" style="box-shadow: 0 18px 20px -4px rgba(26,34,42,.3); color:yellow">
 
                 </span></a>
             <a th:href="@{/question_delete/{id}(id= ${question.id})}">
-                <span type="button"  class="btn btn-outline-danger " th:text="delete" style="box-shadow: 0 18px 20px -4px rgba(26,34,42,.3)">
+                <span type="button"  class="btn btn-outline-danger button_mischok_kl " th:text="delete" style="box-shadow: 0 18px 20px -4px rgba(26,34,42,.3);  color:#FF0033">
 
                 </span></a>
 

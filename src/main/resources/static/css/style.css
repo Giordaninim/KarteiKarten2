@@ -105,9 +105,26 @@ z-index: 1000;
   cursor: pointer;
 
 }
-/*
-.inputevald {
-text-align: center;
-width:100px ;
-!important
-}*/
+
+.button_mischok_kl {
+  width: 60px;
+  min-height: 30px;
+  color: #f9f9f9;
+  text-align: center;
+  letter-spacing: .1em;
+  text-transform: none;
+  object-fit: fill;
+  background-color: #002a5c;
+  border: 0;
+  border-radius: 5px;
+  margin-top: 40px;
+  margin-bottom: 25px;
+  padding: 5px 5px;
+  font-size: 15px;
+  font-weight: 400;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 18px 20px -4px rgba(26,34,42,.3);
+  cursor: pointer;
+
+}
