@@ -17,8 +17,9 @@
         <div class="flip-box">
             <div class="flip-box-front text-center" style="background-image: url(/img/MischokQuiz.jpg); ">
                 <div class="inner color-white">
-                    <h2 class="flip-box-header"  >Question</h2>
+                    <h2 class="flip-box-header"  >Question Nr. <span th:text="${question.id}"/></h2>
                     <div th:text="${question.frage}" style="font-size: 20px" />
+
                     <p></p>
 
                 </div>
@@ -26,7 +27,7 @@
             <div class="flip-box-back text-center" style="background-image: url(/img/MischokQuiz.jpg);">
                 <div class="inner color-white">
                     <h2 class="flip-box-header"  >Answer</h2>
-                    <div th:text="${question.antwort}" style="font-size: 20px" />
+                    <div th:text="${question.antwort}" style="font-size: 20px; --bs-gutter-x:0.7rem;  " />
 
 
 
@@ -36,7 +37,7 @@
         </div>
     </div>
 </div> <!--Card-->
-
+    <br><br>
 <form action="#" th:action="@{/quiz/{qid}(qid= ${question.id})}" method="post" th:object="${question}">
 
 

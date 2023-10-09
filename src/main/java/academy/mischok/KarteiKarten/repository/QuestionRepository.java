@@ -70,6 +70,12 @@ public class QuestionRepository implements CrudRepository<Question, Integer> {
 		//System.out.println(question);
 		return question;
 	}
+	public Question findByRandomFrageResult() {
+		String sql = "SELECT *, CAST (richtig as float) / gestellt as r FROM frage order by r LIMIT 1";
+		Question question = jdbcTemplate.queryForObject(sql, new QuestionRowMapper());
+		//System.out.println(question);
+		return question;
+	}
 	
 	public void counterGestellt(int gestelltPlusEins, int id) {
 		String sql = "UPDATE frage SET gestellt = ? WHERE id=?";
