@@ -1,11 +1,24 @@
 package academy.mischok.KarteiKarten.domain;
 
-import javax.management.QueryEval;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Question {
 	private Integer id;
-	private String frage;
-	private String antwort;
+private String frage;
+private String antwort;
+private Integer gestellt;
+private Integer richtig;
+private Integer r;
+
+	public Integer getR() {
+		return r;
+	}
+	
+	public void setR(Integer r) {
+		this.r = r;
+	}
+	
 	public String getFrage() {
 		return frage;
 	}
@@ -28,15 +41,36 @@ public class Question {
 	}
 	
 	public Question() {};
-	public Question(String frage, String antwort) {
+	
+	public Integer getGestellt() {
+		
+		return gestellt;
+	}
+	
+	public void setGestellt(Integer gestellt) {
+		this.gestellt = gestellt;
+	}
+	
+	public Integer getRichtig() {
+		return richtig;
+	}
+	
+	public void setRichtig(Integer richtig) {
+		this.richtig = richtig;
+	}
+	
+	public Question(int id, String frage, String antwort) {
 		this.frage=frage;
 		this.antwort=antwort;
+		this.id=id;
+		
 	}
 	@Override
 	public String toString() {
 		return "Question{" +
 				"frage='" + frage + '\'' +
 				", antwort='" + antwort + '\'' +
+				"id='" + id + '\''+
 				'}';
 	}
 }

@@ -5,20 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <title>QUIZZZZZZ</title>
+    <title>Quiz</title>
 </head>
 <body>
 <div th:insert="~{fragments/template :: navbar}"></div>
+<div  style="padding:100px">
+<div class="container" align=center>
 
-<div class="container">
-    <div class="row">
 
-        <div th:insert="~{fragments/template :: card}"></div>
+    <div class="box-item col-md-4">
+        <div class="flip-box">
+            <div class="flip-box-front text-center" style="background-image: url(/img/MischokQuiz.jpg); ">
+                <div class="inner color-white">
+                    <h2 class="flip-box-header"  >Question</h2>
+                    <div th:text="${question.frage}" style="font-size: 20px" />
+                    <p></p>
+
+                </div>
+            </div>
+            <div class="flip-box-back text-center" style="background-image: url(/img/MischokQuiz.jpg);">
+                <div class="inner color-white">
+                    <h2 class="flip-box-header"  >Answer</h2>
+                    <div th:text="${question.antwort}" style="font-size: 20px" />
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!--Card-->
+
+<form action="#" th:action="@{/quiz/{qid}(qid= ${question.id})}" method="post" th:object="${question}">
+
+
+    <div class="d-flex justify-content-center mt-3">
+        <button type="submit" class="btn btn-success mx-1">Korrekt</button>
+        <button onclick="location.href = 'quiz';" type="button" class="btn btn-danger mx-1">Falsch</button>
     </div>
 
+</form>
 </div>
 
 
-<div th:insert="~{fragments/template :: footer}"></div>
+
+
+
+
+<div th:insert="~{fragments/template :: footer}" ></div>
 </body>
 </html>

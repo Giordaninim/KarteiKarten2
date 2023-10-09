@@ -2,13 +2,16 @@ package academy.mischok.KarteiKarten.controller;
 
 import academy.mischok.KarteiKarten.domain.Question;
 import academy.mischok.KarteiKarten.repository.QuestionRepository;
-import academy.mischok.KarteiKarten.rowmapper.QuestionRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.List;
 
 @Controller
 public class QuestionController {
@@ -18,21 +21,24 @@ public class QuestionController {
 	
 	@GetMapping ("/question_form")
 	public String getQuestion(Model model) {
-		model.addAttribute("question",  buildQuestionModel());
+		model.addAttribute("question",  new Question());
 		
 		questionRepository.findAll();
-		
 		return "question_form";
 	}
 	
 	@PostMapping ("/question_form")
 	public String postQuestion(@ModelAttribute ("question") Question question) {
-		System.out.println(question);
-		
-		return "question_added";
+		//System.out.println(question);
+		questionRepository.save1(question.getFrage(),question.getAntwort());
+		return "redirect:/question_added"; //_added
 	}
 	
-	private Question buildQuestionModel(){
-		return new Question();
+	@GetMapping ("question_added")
+	public String readLastQuestion (Model model) {
+		Question question= questionRepository.readLastQuestion();
+		model.addAttribute("question", question);
+	return ("question_added");
 	}
+	
 }

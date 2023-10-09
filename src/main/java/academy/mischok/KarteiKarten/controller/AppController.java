@@ -8,18 +8,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class AppController {
-    @GetMapping("/")
-    public String index() {
-        return "index";
-    }
+  
     @GetMapping("/karteikarten")
     public String getKarteikarten(){
         return "karteikarten";
     }
-    @GetMapping("/quiz")
-    public String getQuiz() {
-        return "quiz";
-    }
+    
     @GetMapping("/test")
     public String getTest() {
         return "test";
@@ -30,11 +24,5 @@ public class AppController {
     }
     
     
-   /*
-    @PostMapping("/")
-    public String save(@RequestParam String question) {
-        // TODO: Frage in Database speichern
-        return "index";
-    }
-    */
+  
 }

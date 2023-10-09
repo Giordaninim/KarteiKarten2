@@ -1,43 +1,39 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <style type="text/css">
-        label {
-            display: inline-block;
-            width: 200px;
-            margin: 5px;
-            text-align: left;
-        }
-        input[type=text], input[type=password], select {
-            display: inline-block;
-            width: 200px;
-        }
-        input[type=radio] {
-            margin-left: 45px;
-        }
-        input[type=checkbox] {
-            margin-right: 190px;
-        }
-        button {
-            padding: 5px;
-            margin: 10px;
-        }
-    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <title>Question Form</title>
 </head>
 <body>
-<div align="center">
-    <h1>Question registration</h1>
-    <form action="#" th:action="@{/question_form}" method="post" th:object="${question}">
-        <label>Question:</label>
-        <input type="text" th:field="*{frage}"/><br/>
+<div th:insert="~{fragments/template :: navbar}"></div>
+
+<div style="padding:250px">
+<div align="center">          <!--th:field setzt id, name und value-Attribut mit den eingegebenen wert-->
+    <h1 >Question registration</h1>
+
+    <form  action="#" th:action="@{/question_form}" method="post" th:object="${question}">
+        <!--          th:action= URL, an den das Formular die Daten senden wird
+                                                       ${question} is the object of class Question-->
+        <label class="form-label">Question:</label>
+        <input class="form-control w-75" style="color:red" type="text" required placeholder="Enter Question" th:field="${question.frage}"/><br/>
+<!--        <input type="text" required placeholder="Enter Question" th:id="*{frage}" th:name="${question.frage}" th:value="${question.frage}"/><br/>-->
+
+        <!-- id="xxx" is only css-style, not DB-table-->
+                <!-- placeholder: text visible in input-feld when nothing is written-->
+                <!-- type=text: we get a text-input-field. opt=date, time, url, ...
+                   th:field=frage -> to save the input in the variable from object of class-->
+
         <label>Answer:</label>
-        <input type="text" th:field="*{antwort}"/><br/>
-        <button type="submit">Submit</button>
-
+        <input id="input_answer" class="form-control w-75" type="text" style="color:green" required placeholder="Enter Answer" th:field="*{antwort}"/><br/>
+        <!-- || <button type="submit">Create User</button> || this does the same as input-type as below-->
+        <input type="submit" value="Submit">
     </form>
-
 </div>
+</div>
+<div th:insert="~{fragments/template :: footer}"></div>
+
 </body>
 </html>

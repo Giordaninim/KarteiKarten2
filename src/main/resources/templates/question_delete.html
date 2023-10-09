@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <title>Edit</title>
+</head>
+<body>
+<div th:insert="~{fragments/template :: navbar}"></div>
+<div    class="container" style="padding:250px">
+<h1 align=center >Question delete</h1>
+
+<table align="center" style="border:1px solid">
+    <tr style="border:1px solid"> <th>Your Question</th>
+    </tr>
+    <tr>
+        <th>Frage</th>
+        <th>Antwort</th>
+    </tr>
+    <tr>
+        <td th:text="${oldQuestion.frage}"/>
+        <td th:text="${oldQuestion.antwort}"/>
+    </tr>
+</table>
+    <br>
+
+<div align="center">
+
+    <form action="#" th:action="@{/question_delete/{id}(id=${oldQuestion.id})}" method="post" th:object="${newQuestion}">
+        <button type="submit" class="btn btn-danger mx-1">Delete?</button>
+    </form>
+</div>
+
+</div>
+
+<div th:insert="~{fragments/template :: footer}"></div>
+
+</body>
+</html>

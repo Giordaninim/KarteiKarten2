@@ -8,22 +8,47 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>Template</title>
+    <style>
+        .navbar {
+position: fixed
+top: 0;
+background-color:red;
+width: 100%;
+z-index: 1000;
+
+}
+    </style>
 </head>
 <body>
 
-<section th:fragment="navbar">
-    <nav class="navbar navbar-light bg-light shadow">
-        <div class="container">
-            <a class="navbar-brand" href="/">
-                <img src="https://uploads-ssl.webflow.com/5e8de059d35d92d837a57961/5fd23dc18d7d24876d2919d8_LOGO_L_POS_RGB.svg" width="180">
+<section th:fragment="navbar"  >
+
+    <nav class=" navbar-light bg-light shadow navbar" style="position: fixed; top:0; width:100%; z-index:1000" >
+        <div class="container"  >
+           <span>
+               <a class="navbar-brand" href="/" >
+                <img src="https://uploads-ssl.webflow.com/5e8de059d35d92d837a57961/5fd23dc18d7d24876d2919d8_LOGO_L_POS_RGB.svg" width="250">
             </a>
+           </span>
+            <span>
+                 <button onclick="location.href = '/question_form';" type="button" class="button_mischok"
+                 >Create</button>
+        <button onclick="location.href = '/question_read';" type="button" class="button_mischok"
+        >Overview</button>
+        <button onclick="location.href = '/quiz';" type="button" class="button_mischok"
+        >Quiz</button>
+        <button onclick="location.href = '/result';" type="button" class="button_mischok"
+        >Result</button>
+            </span>
+
         </div>
     </nav>
+
 </section>
 
-<section th:fragment="footer">
-<footer class="fixed-bottom" id="footer">
-    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+<section th:fragment="footer"  >
+<footer    style="background-color:#f9f9f9; position:fixed; bottom:0; width:100%;      " >
+    <ul class="nav justify-content-center border-bottom position-sticky pb-3 mb-3"  >
         <li class="nav-item"><a href="https://www.mischok.academy/impressum" target="_blank" class="nav-link px-2 text-muted">Impressum</a>
         </li>
         <li class="nav-item"><span class="px-1 nav-link text-muted">•</span></li>
@@ -52,12 +77,10 @@
                 <div class="inner color-white">
                     <h3 class="flip-box-header">Karteikarten Modus </h3>
                     <p>Ein projekt von Antonio La Maida.</p>
-                    <button onclick="location.href = 'karteikarten';" type="button" class="btn btn-primary"
+                    <button onclick="location.href = 'question_form';" type="button" class="btn btn-primary"
                             style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size:20px .75rem;">Create</button>
-                    <button onclick="location.href = 'karteikarten';" type="button" class="btn btn-primary"
-                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size:20px .75rem;">Change</button>
-                    <button onclick="location.href = 'karteikarten';" type="button" class="btn btn-primary"
-                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size:20px .75rem;">Delete</button>
+
+
                 </div>
             </div>
         </div>
