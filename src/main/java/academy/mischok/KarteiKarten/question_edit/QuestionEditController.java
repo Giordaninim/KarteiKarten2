@@ -25,7 +25,7 @@ public class QuestionEditController {
 	@PostMapping ("/question_edit/{id}")
 	public String changeQuestion(@PathVariable ("id") int id, @ModelAttribute ("question") Question question) {
 
-		questionRepository.changeById(id, question.getFrage(), question.getAntwort(), 0, 0);
+		questionRepository.changeById(question);
 		return "redirect:/question_read";
 	}
 

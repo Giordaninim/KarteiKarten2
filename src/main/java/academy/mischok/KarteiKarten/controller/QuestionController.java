@@ -30,7 +30,8 @@ public class QuestionController {
 	@PostMapping ("/question_form")
 	public String postQuestion(@ModelAttribute ("question") Question question) {
 		//System.out.println(question);
-		questionRepository.save1(question.getFrage(),question.getAntwort());
+		questionRepository.save(question);
+//		questionRepository.save1(question.getFrage(),question.getAntwort());
 		return "redirect:/question_added"; //_added
 	}
 	
