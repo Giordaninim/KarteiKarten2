@@ -19,7 +19,7 @@ public class QuestionDeleteController {
 	@GetMapping ("/question_delete/{id}")
 	public String questionDelete(Model model, @PathVariable int id) {
 		model.addAttribute("oldQuestion", questionRepository.findById(id));
-		model.addAttribute("newQuestion", new Question());
+		//model.addAttribute("newQuestion", new Question());
 		
 		return "question_delete";
 	}

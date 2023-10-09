@@ -41,8 +41,9 @@ public class QuestionRepository implements CrudRepository<Question, Integer> {
 		return question;
 	}
 	@Override
-	public Question findById(Integer integer) {
-		String sql = "SELECT * FROM frage WHERE id = %d".formatted(integer);
+	public Question findById(Integer id) {
+//		String sql = "SELECT * FROM frage WHERE id = %d".formatted(id);
+		String sql = "SELECT * FROM frage WHERE id = " + id;
 		return jdbcTemplate.queryForObject(sql, new QuestionRowMapper());
 	}
 		@Override
@@ -51,7 +52,7 @@ public class QuestionRepository implements CrudRepository<Question, Integer> {
 	}
 
 	public void save1(String frage, String antwort) {
-		String sql = "insert into frage (frage, antwort, gestellt, richtig) values (?, ?, 0, 0)";
+		String sql = "insert into frage (frage, antwort, gestellt, richtig) values (?, ?, 3, 1)";
 		int row =  jdbcTemplate.update(sql, frage, antwort);
 	}
 	@Override
