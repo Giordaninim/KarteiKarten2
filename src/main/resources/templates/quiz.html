@@ -9,50 +9,37 @@
 </head>
 <body>
 <div th:insert="~{fragments/template :: navbar}"></div>
-<div  style="padding:100px">
-<div class="container" align=center>
 
-
-    <div class="box-item col-md-4">
-        <div class="flip-box">
-            <div class="flip-box-front text-center" style="background-image: url(/img/MischokQuiz.jpg); ">
-                <div class="inner color-white">
-                    <h2 class="flip-box-header"  >Question Nr. <span th:text="${question.id}"/></h2>
-                    <div th:text="${question.frage}" style="font-size: 20px" />
-
-                    <p></p>
-
+<div style="padding:100px">
+    <div class="container" align=center>
+        <div class="box-item col-md-4">
+            <div class="flip-box">
+                <div class="flip-box-front text-center" style="background-image: url(/img/MischokQuiz.jpg); ">
+                    <div class="inner color-white">
+                        <h2 class="flip-box-header">Question Nr. <span th:text="${question.id}"/></h2>
+                        <div th:text="${question.frage}" style="font-size: 20px"/>
+                        <p></p>
+                    </div>
                 </div>
-            </div>
-            <div class="flip-box-back text-center" style="background-image: url(/img/MischokQuiz.jpg);">
-                <div class="inner color-white">
-                    <h2 class="flip-box-header"  >Answer</h2>
-                    <div th:text="${question.antwort}" style="font-size: 20px; --bs-gutter-x:0.7rem;  " />
-
-
-
-
+                <div class="flip-box-back text-center" style="background-image: url(/img/MischokQuiz.jpg);">
+                    <div class="inner color-white">
+                        <h2 class="flip-box-header">Answer</h2>
+                        <div th:text="${question.antwort}" style="font-size: 20px; --bs-gutter-x:0.7rem;  "/>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div> <!--Card-->
+    </div> <!--Card-->
     <br>
-<form action="#" th:action="@{/quiz/{qid}(qid= ${question.id})}" method="post" th:object="${question}">
-
-
-    <div class="d-flex justify-content-center mt-3">
-        <button type="submit" class="btn btn-success mx-1 button_mischok" style="color:#7FFF00" >Right</button>
-        <button onclick="location.href = 'quiz';" type="button" class="btn btn-danger mx-1 button_mischok" style="color:#FF0033">Wrong</button>
-    </div>
-
-</form>
+    <form action="#" th:action="@{/quiz/{qid}(qid= ${question.id})}" method="post" th:object="${question}">
+        <div class="d-flex justify-content-center mt-3">
+            <button type="submit" class="btn btn-success mx-1 button_mischok" style="color:#7FFF00">Right</button>
+            <button onclick="location.href = 'quiz';" type="button" class="btn btn-danger mx-1 button_mischok"
+                    style="color:#FF0033">Wrong
+            </button>
+        </div>
+    </form> <!--right/wrong buttons-->
 </div>
-
-
-
-
-
 
 <div th:insert="~{fragments/template :: footer}" ></div>
 </body>
