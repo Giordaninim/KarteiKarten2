@@ -16,21 +16,16 @@ public class QuestionResultController {
 	@Autowired Method method;
 	@GetMapping ("/result")
 	public String resultGlobal (Model model) {
-		/*List<Question> questions= questionRepository.findAll();
-		
+		List<Question> questions= questionRepository.findAll();
+		double rr = 0;
 		for (Question question1 : questions) {
-			method.calulateGlobal(question1);
+			method.calculateResult(question1);
+			rr +=  question1.getR();
 		}
-		model.addAttribute("questions", questions);*/
+		double rrG =  rr/ questions.size();
+		System.out.println("das ist rrG: " +rrG);
+		model.addAttribute("resultGlobal", Double.toString(rrG).substring(0,2));
 		
 		return "result";
 	}
 }
-
-/*Question question = questionRepo.findByRandomFrageResult();
-		model.addAttribute("question", question);
-		//System.out.println(question);
-		
-		
-		int gestelltPlusEins = question.getGestellt() +1;
-		questionRepo.counterGestellt(gestelltPlusEins, question.getId());*/

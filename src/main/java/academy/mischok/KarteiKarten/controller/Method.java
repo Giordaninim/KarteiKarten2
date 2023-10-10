@@ -15,4 +15,6 @@ public class Method {
 		question.setR((int) Math.round(r));
 	}
 	
+	
+	
 }

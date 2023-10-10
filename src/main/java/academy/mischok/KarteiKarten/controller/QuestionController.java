@@ -23,7 +23,7 @@ public class QuestionController {
 	public String getQuestion(Model model) {
 		model.addAttribute("question",  new Question());
 		
-		questionRepository.findAll();
+		//questionRepository.findAll();
 		return "question_form";
 	}
 	

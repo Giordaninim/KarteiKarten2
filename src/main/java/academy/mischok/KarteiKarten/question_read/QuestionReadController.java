@@ -26,7 +26,7 @@ public class QuestionReadController {
 			method.calculateResult(question1);
 		}
 		model.addAttribute("questions", questions);
-
+		System.out.println("r is: "+ question.getRr());
 		return "question_read";
 	}
 	

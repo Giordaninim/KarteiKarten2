@@ -10,7 +10,7 @@ private String antwort;
 private Integer gestellt;
 private Integer richtig;
 private Integer r;
-private float rr;
+private double rr;
 
 	public Integer getR() {
 		return r;
@@ -68,18 +68,17 @@ private float rr;
 	}
 	@Override
 	public String toString() {
-		return "Question{" +
-				"frage='" + frage + '\'' +
-				", antwort='" + antwort + '\'' +
-				"id='" + id + '\''+
-				'}';
+		return "Question: " + frage + " Antwort: " +antwort +
+				" id: " + id + " r: " + r + " rr: " +rr;
+				
+				
 	}
 	
-	public float getRr() {
+	public double getRr() {
 		return rr;
 	}
 	
-	public void setRr(float rr) {
+	public void setRr(double rr) {
 		this.rr = rr;
 	}
 }

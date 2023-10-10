@@ -67,7 +67,8 @@ z-index: 1000;
                 <div class="inner color-white">
                     <h3 class="flip-box-header">Karteikarten</h3>
                     <p>A short sentence describing this callout is.</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" class="bi bi-card-checklist" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor"
+                         class="bi bi-card-checklist" viewBox="0 0 16 16">
                         <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
                         <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/>
                     </svg>
@@ -78,9 +79,9 @@ z-index: 1000;
                     <h3 class="flip-box-header">Karteikarten Modus </h3>
                     <p>Ein projekt von Antonio La Maida.</p>
                     <button onclick="location.href = 'question_form';" type="button" class="btn btn-primary"
-                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size:20px .75rem;">Create</button>
-
-
+                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size:20px .75rem;">
+                        Create
+                    </button>
                 </div>
             </div>
         </div>
@@ -88,22 +89,30 @@ z-index: 1000;
 </section>
 
 <section th:fragment="navbar_empty"  >
-
     <nav class=" navbar-light bg-light shadow navbar" style="position: fixed; top:0; width:100%; z-index:1000" >
         <div class="container"  >
-           <span>
-               <a class="navbar-brand" href="/" >
-                <img src="https://uploads-ssl.webflow.com/5e8de059d35d92d837a57961/5fd23dc18d7d24876d2919d8_LOGO_L_POS_RGB.svg" width="250">
-            </a>
-           </span>
-
-
+            <div class="row">
+                <div class="col-md-7">
+                    <span>
+                        <a class="navbar-brand" href="/" >
+                            <img src="https://uploads-ssl.webflow.com/5e8de059d35d92d837a57961/5fd23dc18d7d24876d2919d8_LOGO_L_POS_RGB.svg" width="250">
+                        </a>
+                    </span>
+                </div>
+                <div class="col-md-5">
+                    <span>
+                        <div class="position-relative py-4 px-2">
+                            <h1 style="width: 300px; min-height: 50px; padding: 7px 5px; text-align:center; font-size: 35px; color: #f9f9f9;
+                                background-color: #002a5c; border-radius: 20px;    box-shadow: 0 18px 20px -4px rgba(26,34,42,.3)">
+                                KarteiKartenApp
+                            </h1>
+                        </div>
+                    </span>
+                </div>
+            </div>
         </div>
     </nav>
-
 </section>
-
-
 
 
 

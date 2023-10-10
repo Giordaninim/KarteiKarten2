@@ -79,7 +79,7 @@ public class QuestionRepository implements CrudRepository<Question, Integer> {
 	}
 	
 	public Question resultGlobal() {
-		String sql = "SELECT  (CAST (SUM(richtig) AS float)/SUM(gestellt)) as rr FROM frage";
+		String sql = "SELECT  (CAST (SUM(richtig) AS double)/SUM(gestellt)) as rr FROM frage";
 		Question question = jdbcTemplate.queryForObject(sql, new QuestionRowMapper());
 		//System.out.println(question);
 		return question;

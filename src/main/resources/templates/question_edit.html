@@ -13,7 +13,7 @@
 <div style="padding:250px">
 
 
-<table align="center" style="border:1px solid">
+<table  align="center" style="border:1px solid">
     <tr style="border:1px solid"> <th>Your Question</th>
     </tr>
     <tr>
@@ -34,20 +34,28 @@
 
 <br>
 
-<div align="center">          <!--th:field setzt id, name und value-Attribut mit den eingegebenen wert-->
-  <h1 >Question edit</h1>
-  <form action="#" th:action="@{/question_edit/{id}(id=${oldQuestion.id})}" method="post" th:object="${newQuestion}">
+    <div align="center">          <!--th:field setzt id, name und value-Attribut mit den eingegebenen wert-->
+        <h1 >Question change</h1>
 
-    <label>Question:</label>
-    <input  style="color:red" type="text" required th:placeholder="${oldQuestion.frage} " th:field="${newQuestion.frage}"/><br/>
+        <form action="#" class="table mb-3" th:action="@{/question_edit/{id}(id=${oldQuestion.id})}" method="post" th:object="${newQuestion}">
+            <!--          th:action= URL an, an den das Formular die Daten senden wird
+                                                           ${question} is the object of class Question-->
+            <label class="form-label">Question:</label>
+            <input class="form-control w-75" style="color:red" type="text" required  th:field="${oldQuestion.frage}"/><br/>
+            <!--        <input type="text" required placeholder="Enter Question" th:id="*{frage}" th:name="${question.frage}" th:value="${question.frage}"/><br/>-->
 
-   <label>Answer:</label>
-    <input cus="true" id="input_answer" type="text" required th:placeholder="${oldQuestion.antwort}" th:field="*{antwort}"/>
-      <br> <br>
-      <button type="submit" class="btn btn-danger mx-1 button_mischok">Change</button>
+            <!-- id="xxx" is only css-style, not DB-table-->
+            <!-- placeholder: text visible in input-feld when nothing is written-->
+            <!-- type=text: we get a text-input-field. opt=date, time, url, ...
+               th:field=frage -> to save the input in the variable from object of class-->
 
-  </form>
-</div>
+            <label class="form-label">Answer:</label>
+            <input id="input_answer" class="form-control w-75" style="color:green" type="text" required th:field="${oldQuestion.antwort}"/>
+            <br>
+            <br>
+            <button type="submit" class="btn btn-danger mx-1 button_mischok">Change</button>
+        </form>
+    </div>
 
 </div>
 <div th:insert="~{fragments/template :: footer}"></div>
