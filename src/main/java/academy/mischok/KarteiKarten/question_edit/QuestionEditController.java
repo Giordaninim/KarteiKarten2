@@ -1,5 +1,4 @@
 package academy.mischok.KarteiKarten.question_edit;
-
 import academy.mischok.KarteiKarten.domain.Question;
 import academy.mischok.KarteiKarten.repository.QuestionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,10 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
-
-
-
 @Controller
 public class QuestionEditController {
 	@Autowired private QuestionRepository questionRepository;
@@ -24,16 +19,7 @@ public class QuestionEditController {
 	}
 	@PostMapping ("/question_edit/{id}")
 	public String changeQuestion(@PathVariable ("id") int id, @ModelAttribute ("question") Question question) {
-
 		questionRepository.changeById(id, question.getFrage(), question.getAntwort(), 3, 1);
 		return "redirect:/question_read";
 	}
-
-	
-	
-	
-	
-	
-	
-	
 }

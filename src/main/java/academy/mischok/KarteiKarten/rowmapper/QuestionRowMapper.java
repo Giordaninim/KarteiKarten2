@@ -1,12 +1,9 @@
 package academy.mischok.KarteiKarten.rowmapper;
-
 import academy.mischok.KarteiKarten.domain.Question;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 @Component
 public class QuestionRowMapper implements RowMapper<Question> {
 	@Override
@@ -17,7 +14,6 @@ public class QuestionRowMapper implements RowMapper<Question> {
 		question.setFrage(rs.getString("frage"));
 		question.setGestellt(rs.getInt("gestellt"));
 		question.setRichtig(rs.getInt("richtig"));
-
 		return question;
 	}
 }

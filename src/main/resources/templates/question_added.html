@@ -10,14 +10,9 @@
 <body>
 
 <div th:insert="~{fragments/template :: navbar}"></div>
-<div style="padding:250px">
-
+<div  style="padding:250px">
+    <h1 class="d-flex justify-content-center" >Just Added</h1>
 <table class="table w-75" align="center" style="border:1px solid">
-    <tr style="border:1px solid" >
-        <th class="text-center" colspan="2"  >Just added</th>
-    </tr>
-
-
     <tr>
         <th>Frage</th>
         <th>Antwort</th>
@@ -34,11 +29,11 @@
 <br>
 <div align="center">          <!--th:field setzt id, name und value-Attribut mit den eingegebenen wert-->
     <h1 >Next Question</h1>
-    <form action="#" class="table mb-3" th:action="@{/question_form}" method="post" th:object="${question}">
+    <form action="#" class="table mb-3" th:action="@{/question_added}" method="post" th:object="${question}">
         <!--          th:action= URL an, an den das Formular die Daten senden wird
                                                        ${question} is the object of class Question-->
         <label class="form-label">Question:</label>
-        <input class="form-control w-75" style="color:red" type="text" required placeholder="Enter Question" th:field="${question.frage}"/><br/>
+        <input class="form-control w-75" style="color:red" type="text" required placeholder="Enter Question" th:field="${newQuestion.frage}"/><br/>
         <!--        <input type="text" required placeholder="Enter Question" th:id="*{frage}" th:name="${question.frage}" th:value="${question.frage}"/><br/>-->
 
         <!-- id="xxx" is only css-style, not DB-table-->
@@ -47,7 +42,7 @@
            th:field=frage -> to save the input in the variable from object of class-->
 
         <label class="form-label">Answer:</label>
-        <input id="input_answer" class="form-control w-75" style="color:green" type="text" required placeholder="Enter Answer" th:field="*{antwort}"/>
+        <input id="input_answer" class="form-control w-75" style="color:green" type="text" required placeholder="Enter Answer" th:field="${newQuestion.antwort}"/>
         <br>
         <br>
         <!-- || <button type="submit">Create User</button> || this does the same as input-type as below-->
