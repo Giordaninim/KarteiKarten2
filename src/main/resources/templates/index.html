@@ -9,35 +9,40 @@
 </head>
 <body>
 <div th:insert="~{fragments/template :: navbar_empty}"></div>
-<!--test-->
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
+<div  style="padding:250px">
 
 <div class="container">
     <div class="row">
         <div class="col-md-3">
             <ul>
-                <li class="list-group-item"> <button onclick="location.href = '/question_form';" type="button" class="button_mischok"
-                >Create</button> </li>
-                <li class="list-group-item"><button onclick="location.href = '/question_read';" type="button" class="button_mischok"
-                >Overview</button> </li>
-                <li class="list-group-item" > <button onclick="location.href = '/quiz';" type="button" class="button_mischok"
-                >Quiz</button> </li>
-                <li class="list-group-item" > <button onclick="location.href = '/result';" type="button" class="button_mischok"
-                >Result</button> </li>
+                <li class="list-group-item">
+                    <button onclick="location.href = '/question_form';" type="button" class="button_mischok"
+                    >Create
+                    </button>
+                </li>
+                <li class="list-group-item">
+                    <button onclick="location.href = '/question_read';" type="button" class="button_mischok"
+                    >Overview
+                    </button>
+                </li>
+                <li class="list-group-item">
+                    <button onclick="location.href = '/quiz';" type="button" class="button_mischok"
+                    >Quiz
+                    </button>
+                </li>
+                <li class="list-group-item">
+                    <button onclick="location.href = '/result';" type="button" class="button_mischok"
+                    >Result
+                    </button>
+                </li>
             </ul>
         </div>
-
         <div class="col-md-9 pt-4">
-
-            <img th:src="@{/img/index_pic.jpg}" width="900px" alt="Your Image" />
+            <img th:src="@{/img/index_pic.jpg}" width="900px" alt="Your Image"/>
         </div>
     </div>
+</div>
 </div>
 
 <div th:insert="~{fragments/template :: footer}"></div>
