@@ -1,7 +1,7 @@
 CREATE TABLE frage (
   ID int NOT NULL AUTO_INCREMENT,
-  frage varchar(250) not null,
-  antwort varchar(500),
+  frage varchar(500) not null,
+  antwort varchar(1500),
   gestellt int,
   richtig int,
   PRIMARY KEY ( ID )
