@@ -13,36 +13,46 @@
 
 <div class="container" style="padding:200px">
     <h2 style="text-align:center">All Questions</h2>
-    <table class="table w-100">
-        <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Question</th>
-            <th scope="col">Answer</th>
-            <th class="col-md-auto" scope="col" align=center style="text-align:center">Result</th>
-            <th class="col" scope="col" style="text-align:center">Handle</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="question: ${questions}">
-            <td th:text="${question.id}"/>
-            <td th:text="${question.frage}"/>
-            <td th:text="${question.antwort}"/>
-            <td style="text-align:center" th:text="${question.r+'%'}"/>
-            <td width="145px">
-                <div th:each="question : ${question}">
-                    <a th:href="@{/question_edit/{id}(id = ${question.id})}">
-                <span type="button" class="btn btn-outline-warning button_mischok_kl " th:text="edit"
-                      style="box-shadow: 0 18px 20px -4px rgba(26,34,42,.3); color:yellow">
-                </span></a>
-                    <a th:href="@{/question_delete/{id}(id= ${question.id})}">
-                <span type="button" class="btn btn-outline-danger button_mischok_kl " th:text="delete"
-                      style="box-shadow: 0 18px 20px -4px rgba(26,34,42,.3);  color:#FF0033">
-                </span></a>
-                </div>
-        </tr>
-        </tbody>
-    </table>
+
+    <!--TABLE Question Read-->
+        <table class="table w-100">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Question</th>
+                <th scope="col">Answer</th>
+                <th class="col-md-auto" scope="col" align=center style="text-align:center">Result</th>
+                <th class="col" scope="col" style="text-align:center">Handle</th>
+            </tr>
+            </thead>
+
+        <!--SCHLEIFE DATA FROM Question-->
+            <tbody>
+            <tr th:each="question: ${questions}">
+                <td th:text="${question.id}"/>
+                <td th:text="${question.frage}"/>
+                <td th:text="${question.antwort}"/>
+                <td style="text-align:center" th:text="${question.r+'%'}"/>
+                <td width="145px">
+                    <div th:each="question : ${question}">
+
+                <!--BUTTON Edit Question-->
+                        <a th:href="@{/question_edit/{id}(id = ${question.id})}">
+                    <span type="button" class="btn btn-outline-warning button_mischok_kl " th:text="edit"
+                          style="box-shadow: 0 18px 20px -4px rgba(26,34,42,.3); color:yellow">
+                    </span></a>
+
+                <!--BUTTON Delete Question-->
+                        <a th:href="@{/question_delete/{id}(id= ${question.id})}">
+                    <span type="button" class="btn btn-outline-danger button_mischok_kl " th:text="delete"
+                          style="box-shadow: 0 18px 20px -4px rgba(26,34,42,.3);  color:#FF0033">
+                    </span></a>
+
+                    </div>
+            </tr>
+            </tbody>
+        </table>
+
 </div>
 
 <div th:insert="~{fragments/template :: footer}" class="position-fixed" ></div>
