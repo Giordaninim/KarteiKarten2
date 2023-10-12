@@ -10,9 +10,12 @@
 <body>
 
 <div th:insert="~{fragments/template :: navbar}"></div>
+
 <div style="padding:250px">
-    <h1 class="d-flex justify-content-center">Just Added</h1>
-    <table class="table w-75" align="center" style="border:1px solid">
+
+    <!--TABLE Just Added Question -->
+        <h1 class="d-flex justify-content-center">Just Added</h1>
+        <table class="table w-75" align="center" style="border:1px solid">
         <tr>
             <th>Question</th>
             <th>Answer</th>
@@ -22,9 +25,11 @@
             <td th:text="${question.antwort}"/>
         </tr>
     </table>
-    <br>
-    <div align="center">
-        <h1>Next Question</h1>
+        <br>
+
+    <!--TABLE Next Question-->
+        <div align="center">
+    <h1>Next Question</h1>
         <form action="#" class="table mb-3" th:action="@{/question_added}" method="post" th:object="${question}">
             <label class="form-label">Question:</label>
             <input class="form-control w-75" style="color:red" type="text" required placeholder="Enter Question"

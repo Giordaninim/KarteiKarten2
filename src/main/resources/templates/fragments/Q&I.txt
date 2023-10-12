@@ -1,3 +1,19 @@
+
+
+
+('Hauptstadt Italien', 'Rome',3,1),
+('Hauptstadt Deutschland', 'Berlin', 3,1),
+('Hauptstadt Frankreich', 'Paris', 3,1),
+('Hauptstadt Spanien', 'Madrid', 3,1),
+('Hauptstadt Österreich ', 'Wien', 3,1),
+('Hauptstadt Portugal', 'Lisboa', 3,1),
+('Hauptstadt Malta', 'La Valletta', 3,1),
+('Hauptstadt Luxemburg', 'Luxemburg', 3,1),
+('Hauptstadt Autralien', 'Canberra', 03,1),
+('Hauptstadt Schweiz', 'Bern', 3,1),
+
+
+
 ('Erklären Sie den Unterschied zwischen einem Array und einer ArrayList in Java.', 'Ein Array hat eine feste Größe, während eine ArrayList dynamisch wächst. Arrays können nur mit primitiven Datentypen oder Objekten eines bestimmten Typs erstellt werden, während eine ArrayList beliebige Objekte speichern kann.', 0, 0),
 
 ('Was ist Vererbung in Java und wie wird sie implementiert?', 'Vererbung ermöglicht es einer Klasse, die Eigenschaften und Methoden einer anderen Klasse zu erben. Sie wird mit dem Schlüsselwort "extends" implementiert.', 0, 0),

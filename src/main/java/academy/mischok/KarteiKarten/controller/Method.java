@@ -1,12 +1,10 @@
 package academy.mischok.KarteiKarten.controller;
-
 import academy.mischok.KarteiKarten.domain.Question;
 import academy.mischok.KarteiKarten.repository.QuestionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-
 @Component
 public class Method {
 	@Autowired

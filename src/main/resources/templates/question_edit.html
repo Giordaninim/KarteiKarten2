@@ -11,22 +11,24 @@
 <div th:insert="~{fragments/template :: navbar}"></div>
 
 <div style="padding:250px">
-    <table align="center" style="border:1px solid">
-        <tr style="border:1px solid">
-            <th>Your Question</th>
-        </tr>
+
+    <!--TABLE Your Question-->
+        <h1 class="d-flex justify-content-center">Your Question</h1>
+        <table class="table w-75" align="center" style="border:1px solid">
         <tr>
-            <th>Frage</th>
-            <th>Antwort</th>
+            <th>Question</th>
+            <th>Answer</th>
         </tr>
         <tr>
             <td th:text="${oldQuestion.frage}"/>
             <td th:text="${oldQuestion.antwort}"/>
         </tr>
     </table>
-    <br>
-    <div align="center">
-        <h1>Question change</h1>
+        <br>
+        <div align="center">
+
+    <!--TABLE Change Question-->
+        <h1>Change Question</h1>
         <form action="#" class="table mb-3" th:action="@{/question_edit/{id}(id=${oldQuestion.id})}" method="post"
               th:object="${newQuestion}">
             <label class="form-label">Question:</label>
@@ -40,7 +42,9 @@
             <button type="submit" class="btn btn-outline-warning mx-1 button_mischok" style="color:yellow">Change
             </button>
         </form>
-    </div>
+        </div>
+
+
 </div>
 
 <div th:insert="~{fragments/template :: footer}"></div>

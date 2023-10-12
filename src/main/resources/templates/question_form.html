@@ -12,6 +12,8 @@
 
 <div style="padding:250px">
     <div align="center">
+
+    <!--TABLE Question Registration-->
         <h1>Question registration</h1>
         <form action="#" th:action="@{/question_form}" method="post" th:object="${question}">
             <label class="form-label">Question:</label>
@@ -23,6 +25,7 @@
                    placeholder="Enter Answer" th:field="*{antwort}"/><br/>
             <input type="submit" class="button_mischok" value="Submit">
         </form>
+
     </div>
 </div>
 

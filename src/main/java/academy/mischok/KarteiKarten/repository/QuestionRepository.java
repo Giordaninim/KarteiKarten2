@@ -38,7 +38,6 @@ public class QuestionRepository implements CrudRepository<Question, Integer> {
 	}
 	@Override
 	public void delete(Question entity) {
-	
 	}
 	@Override
 	public void update(Question entity) {

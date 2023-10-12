@@ -1,5 +1,4 @@
 package academy.mischok.KarteiKarten.domain;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,10 +16,10 @@ private String antwort;
 private Integer gestellt;
 private Integer richtig;
 private Integer r;
-
 	@Override
 	public String toString() {
 		return "Question: " + frage + " Antwort: " +antwort +
 				" id: " + id + " r: " + r;
 	}
 }
+
